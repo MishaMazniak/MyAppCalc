@@ -1,0 +1,162 @@
+[
+  {
+    "id_f_drill_toolcarbide": "1",
+    "diametr": "1",
+    "steel": "0.02",
+    "aluminum": "0.04",
+    "stainles": "0.02",
+    "iron": "0.02"
+  },
+  {
+    "id_f_drill_toolcarbide": "2",
+    "diametr": "2",
+    "steel": "0.05",
+    "aluminum": "0.10",
+    "stainles": "0.04",
+    "iron": "0.05"
+  },
+  {
+    "id_f_drill_toolcarbide": "3",
+    "diametr": "3",
+    "steel": "0.08",
+    "aluminum": "0.12",
+    "stainles": "0.07",
+    "iron": "0.09"
+  },
+  {
+    "id_f_drill_toolcarbide": "4",
+    "diametr": "4",
+    "steel": "0.11",
+    "aluminum": "0.15",
+    "stainles": "0.08",
+    "iron": "0.12"
+  },
+  {
+    "id_f_drill_toolcarbide": "5",
+    "diametr": "5",
+    "steel": "0.13",
+    "aluminum": "0.18",
+    "stainles": "0.10",
+    "iron": "0.14"
+  },
+  {
+    "id_f_drill_toolcarbide": "6",
+    "diametr": "6",
+    "steel": "0.16",
+    "aluminum": "0.23",
+    "stainles": "0.11",
+    "iron": "0.15"
+  },
+  {
+    "id_f_drill_toolcarbide": "7",
+    "diametr": "7",
+    "steel": "0.18",
+    "aluminum": "0.24",
+    "stainles": "0.12",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolcarbide": "8",
+    "diametr": "8",
+    "steel": "0.21",
+    "aluminum": "0.27",
+    "stainles": "0.13",
+    "iron": "0.20"
+  },
+  {
+    "id_f_drill_toolcarbide": "9",
+    "diametr": "9",
+    "steel": "0.21",
+    "aluminum": "0.28",
+    "stainles": "0.13",
+    "iron": "0.20"
+  },
+  {
+    "id_f_drill_toolcarbide": "10",
+    "diametr": "10",
+    "steel": "0.24",
+    "aluminum": "0.30",
+    "stainles": "0.14",
+    "iron": "0.23"
+  },
+  {
+    "id_f_drill_toolcarbide": "11",
+    "diametr": "11",
+    "steel": "0.24",
+    "aluminum": "0.31",
+    "stainles": "0.14",
+    "iron": "0.23"
+  },
+  {
+    "id_f_drill_toolcarbide": "12",
+    "diametr": "12",
+    "steel": "0.25",
+    "aluminum": "0.32",
+    "stainles": "0.16",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolcarbide": "13",
+    "diametr": "13",
+    "steel": "0.25",
+    "aluminum": "0.33",
+    "stainles": "0.16",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolcarbide": "14",
+    "diametr": "14",
+    "steel": "0.25",
+    "aluminum": "0.34",
+    "stainles": "0.16",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolcarbide": "15",
+    "diametr": "15",
+    "steel": "0.25",
+    "aluminum": "0.35",
+    "stainles": "0.16",
+    "iron": "0.30"
+  },
+  {
+    "id_f_drill_toolcarbide": "16",
+    "diametr": "16",
+    "steel": "0.30",
+    "aluminum": "0.36",
+    "stainles": "0.17",
+    "iron": "0.35"
+  },
+  {
+    "id_f_drill_toolcarbide": "17",
+    "diametr": "17",
+    "steel": "0.30",
+    "aluminum": "0.37",
+    "stainles": "0.17",
+    "iron": "0.36"
+  },
+  {
+    "id_f_drill_toolcarbide": "18",
+    "diametr": "18",
+    "steel": "0.35",
+    "aluminum": "0.40",
+    "stainles": "0.18",
+    "iron": "0.40"
+  },
+  {
+    "id_f_drill_toolcarbide": "19",
+    "diametr": "19",
+    "steel": "0.40",
+    "aluminum": "0.44",
+    "stainles": "0.18",
+    "iron": "0.42"
+  },
+  {
+    "id_f_drill_toolcarbide": "20",
+    "diametr": "20",
+    "steel": "0.42",
+    "aluminum": "0.47",
+    "stainles": "0.19",
+    "iron": "0.45"
+  }
+]

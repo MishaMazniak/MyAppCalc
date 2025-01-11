@@ -1,0 +1,702 @@
+[
+  {
+    "id_screw": "1",
+    "type": "m",
+    "size": "1",
+    "diameter_hole": "0.75",
+    "thread_pitch": "0.25"
+  },
+  {
+    "id_screw": "2",
+    "type": "m",
+    "size": "1.2",
+    "diameter_hole": "0.95",
+    "thread_pitch": "0.25"
+  },
+  {
+    "id_screw": "3",
+    "type": "m",
+    "size": "1.4",
+    "diameter_hole": "1.1",
+    "thread_pitch": "0.3"
+  },
+  {
+    "id_screw": "4",
+    "type": "m",
+    "size": "1.6",
+    "diameter_hole": "1.25",
+    "thread_pitch": "0.35"
+  },
+  {
+    "id_screw": "5",
+    "type": "m",
+    "size": "1.8",
+    "diameter_hole": "1.45",
+    "thread_pitch": "0.35"
+  },
+  {
+    "id_screw": "6",
+    "type": "m",
+    "size": "2",
+    "diameter_hole": "1.6",
+    "thread_pitch": "0.4"
+  },
+  {
+    "id_screw": "8",
+    "type": "m",
+    "size": "2.2",
+    "diameter_hole": "1.75",
+    "thread_pitch": "0.45"
+  },
+  {
+    "id_screw": "9",
+    "type": "m",
+    "size": "2.5",
+    "diameter_hole": "2.05",
+    "thread_pitch": "0.45"
+  },
+  {
+    "id_screw": "10",
+    "type": "m",
+    "size": "3",
+    "diameter_hole": "2.5",
+    "thread_pitch": "0.5"
+  },
+  {
+    "id_screw": "11",
+    "type": "m",
+    "size": "3.5",
+    "diameter_hole": "2.9",
+    "thread_pitch": "0.6"
+  },
+  {
+    "id_screw": "12",
+    "type": "m",
+    "size": "4",
+    "diameter_hole": "3.3",
+    "thread_pitch": "0.7"
+  },
+  {
+    "id_screw": "13",
+    "type": "m",
+    "size": "5",
+    "diameter_hole": "4.2",
+    "thread_pitch": "0.8"
+  },
+  {
+    "id_screw": "14",
+    "type": "m",
+    "size": "6",
+    "diameter_hole": "5",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "15",
+    "type": "m",
+    "size": "7",
+    "diameter_hole": "6",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "16",
+    "type": "m",
+    "size": "8",
+    "diameter_hole": "6.8",
+    "thread_pitch": "1.25"
+  },
+  {
+    "id_screw": "17",
+    "type": "m",
+    "size": "9",
+    "diameter_hole": "7.8",
+    "thread_pitch": "1.25"
+  },
+  {
+    "id_screw": "18",
+    "type": "m",
+    "size": "10",
+    "diameter_hole": "8.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "19",
+    "type": "m",
+    "size": "11",
+    "diameter_hole": "9.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "20",
+    "type": "m",
+    "size": "12",
+    "diameter_hole": "10.2",
+    "thread_pitch": "1.75"
+  },
+  {
+    "id_screw": "21",
+    "type": "m",
+    "size": "14",
+    "diameter_hole": "12",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "22",
+    "type": "m",
+    "size": "16",
+    "diameter_hole": "14",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "23",
+    "type": "m",
+    "size": "18",
+    "diameter_hole": "15.5",
+    "thread_pitch": "2.5"
+  },
+  {
+    "id_screw": "24",
+    "type": "m",
+    "size": "20",
+    "diameter_hole": "17.5",
+    "thread_pitch": "2.5"
+  },
+  {
+    "id_screw": "25",
+    "type": "m",
+    "size": "22",
+    "diameter_hole": "19.5",
+    "thread_pitch": "2.5"
+  },
+  {
+    "id_screw": "26",
+    "type": "m",
+    "size": "24",
+    "diameter_hole": "21",
+    "thread_pitch": "3"
+  },
+  {
+    "id_screw": "27",
+    "type": "m",
+    "size": "27",
+    "diameter_hole": "24",
+    "thread_pitch": "3"
+  },
+  {
+    "id_screw": "28",
+    "type": "m",
+    "size": "30",
+    "diameter_hole": "26.5",
+    "thread_pitch": "3.5"
+  },
+  {
+    "id_screw": "29",
+    "type": "m",
+    "size": "33",
+    "diameter_hole": "29.5",
+    "thread_pitch": "3.5"
+  },
+  {
+    "id_screw": "30",
+    "type": "m",
+    "size": "36",
+    "diameter_hole": "32",
+    "thread_pitch": "4"
+  },
+  {
+    "id_screw": "31",
+    "type": "m",
+    "size": "39",
+    "diameter_hole": "35",
+    "thread_pitch": "4"
+  },
+  {
+    "id_screw": "32",
+    "type": "m",
+    "size": "42",
+    "diameter_hole": "37.5",
+    "thread_pitch": "4.5"
+  },
+  {
+    "id_screw": "33",
+    "type": "m",
+    "size": "45",
+    "diameter_hole": "40.5",
+    "thread_pitch": "4.5"
+  },
+  {
+    "id_screw": "34",
+    "type": "m",
+    "size": "48",
+    "diameter_hole": "43",
+    "thread_pitch": "5"
+  },
+  {
+    "id_screw": "35",
+    "type": "m",
+    "size": "52",
+    "diameter_hole": "47",
+    "thread_pitch": "5"
+  },
+  {
+    "id_screw": "36",
+    "type": "m",
+    "size": "56",
+    "diameter_hole": "50.5",
+    "thread_pitch": "5.5"
+  },
+  {
+    "id_screw": "37",
+    "type": "m",
+    "size": "60",
+    "diameter_hole": "54.5",
+    "thread_pitch": "5.5"
+  },
+  {
+    "id_screw": "38",
+    "type": "m",
+    "size": "64",
+    "diameter_hole": "58",
+    "thread_pitch": "6"
+  },
+  {
+    "id_screw": "39",
+    "type": "m",
+    "size": "68",
+    "diameter_hole": "62",
+    "thread_pitch": "6"
+  },
+  {
+    "id_screw": "40",
+    "type": "mf",
+    "size": "3",
+    "diameter_hole": "2.65",
+    "thread_pitch": "0.35"
+  },
+  {
+    "id_screw": "41",
+    "type": "mf",
+    "size": "4",
+    "diameter_hole": "3.5",
+    "thread_pitch": "0.5"
+  },
+  {
+    "id_screw": "42",
+    "type": "mf",
+    "size": "5",
+    "diameter_hole": "4.5",
+    "thread_pitch": "0.5"
+  },
+  {
+    "id_screw": "43",
+    "type": "mf",
+    "size": "6",
+    "diameter_hole": "5.2",
+    "thread_pitch": "0.75"
+  },
+  {
+    "id_screw": "44",
+    "type": "mf",
+    "size": "7",
+    "diameter_hole": "6.2",
+    "thread_pitch": "0.75"
+  },
+  {
+    "id_screw": "45",
+    "type": "mf",
+    "size": "8",
+    "diameter_hole": "7.2",
+    "thread_pitch": "0.75"
+  },
+  {
+    "id_screw": "46",
+    "type": "mf",
+    "size": "8",
+    "diameter_hole": "7",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "47",
+    "type": "mf",
+    "size": "9",
+    "diameter_hole": "8",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "48",
+    "type": "mf",
+    "size": "10",
+    "diameter_hole": "9.2",
+    "thread_pitch": "0.75"
+  },
+  {
+    "id_screw": "49",
+    "type": "mf",
+    "size": "10",
+    "diameter_hole": "9",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "50",
+    "type": "mf",
+    "size": "10",
+    "diameter_hole": "8.8",
+    "thread_pitch": "1.25"
+  },
+  {
+    "id_screw": "51",
+    "type": "mf",
+    "size": "12",
+    "diameter_hole": "11",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "52",
+    "type": "mf",
+    "size": "12",
+    "diameter_hole": "10.8",
+    "thread_pitch": "1.25"
+  },
+  {
+    "id_screw": "53",
+    "type": "mf",
+    "size": "12",
+    "diameter_hole": "10.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "54",
+    "type": "mf",
+    "size": "14",
+    "diameter_hole": "12.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "55",
+    "type": "mf",
+    "size": "15",
+    "diameter_hole": "13.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "56",
+    "type": "mf",
+    "size": "16",
+    "diameter_hole": "15",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "57",
+    "type": "mf",
+    "size": "16",
+    "diameter_hole": "14.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "58",
+    "type": "mf",
+    "size": "18",
+    "diameter_hole": "16",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "59",
+    "type": "mf",
+    "size": "20",
+    "diameter_hole": "18.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "60",
+    "type": "mf",
+    "size": "20",
+    "diameter_hole": "18",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "61",
+    "type": "mf",
+    "size": "22",
+    "diameter_hole": "20.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "62",
+    "type": "mf",
+    "size": "22",
+    "diameter_hole": "20",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "63",
+    "type": "mf",
+    "size": "24",
+    "diameter_hole": "23",
+    "thread_pitch": "1"
+  },
+  {
+    "id_screw": "64",
+    "type": "mf",
+    "size": "24",
+    "diameter_hole": "22.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "65",
+    "type": "mf",
+    "size": "24",
+    "diameter_hole": "22",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "66",
+    "type": "mf",
+    "size": "26",
+    "diameter_hole": "24.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "67",
+    "type": "mf",
+    "size": "27",
+    "diameter_hole": "25.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "68",
+    "type": "mf",
+    "size": "25",
+    "diameter_hole": "16",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "69",
+    "type": "mf",
+    "size": "28",
+    "diameter_hole": "26.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "70",
+    "type": "mf",
+    "size": "30",
+    "diameter_hole": "28",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "71",
+    "type": "mf",
+    "size": "33",
+    "diameter_hole": "31",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "72",
+    "type": "mf",
+    "size": "36",
+    "diameter_hole": "34.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "73",
+    "type": "mf",
+    "size": "36",
+    "diameter_hole": "34",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "74",
+    "type": "mf",
+    "size": "39",
+    "diameter_hole": "36",
+    "thread_pitch": "2"
+  },
+  {
+    "id_screw": "75",
+    "type": "mf",
+    "size": "42",
+    "diameter_hole": "40.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "76",
+    "type": "mf",
+    "size": "45",
+    "diameter_hole": "43.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "77",
+    "type": "mf",
+    "size": "48",
+    "diameter_hole": "46.5",
+    "thread_pitch": "1.5"
+  },
+  {
+    "id_screw": "78",
+    "type": "g",
+    "size": "1/16",
+    "diameter_hole": "6.8",
+    "thread_pitch": "0.907"
+  },
+  {
+    "id_screw": "79",
+    "type": "g",
+    "size": "1/8",
+    "diameter_hole": "8.8",
+    "thread_pitch": "0.907"
+  },
+  {
+    "id_screw": "80",
+    "type": "g",
+    "size": "1/4",
+    "diameter_hole": "11.8",
+    "thread_pitch": "1.337"
+  },
+  {
+    "id_screw": "81",
+    "type": "g",
+    "size": "3/8",
+    "diameter_hole": "15.25",
+    "thread_pitch": "1.337"
+  },
+  {
+    "id_screw": "82",
+    "type": "g",
+    "size": "1/2",
+    "diameter_hole": "19",
+    "thread_pitch": "1.814"
+  },
+  {
+    "id_screw": "83",
+    "type": "g",
+    "size": "5/8",
+    "diameter_hole": "21",
+    "thread_pitch": "1.814"
+  },
+  {
+    "id_screw": "84",
+    "type": "g",
+    "size": "3/4",
+    "diameter_hole": "24.5",
+    "thread_pitch": "1.814"
+  },
+  {
+    "id_screw": "85",
+    "type": "g",
+    "size": "7/8",
+    "diameter_hole": "28.25",
+    "thread_pitch": "1.81"
+  },
+  {
+    "id_screw": "86",
+    "type": "g",
+    "size": "1",
+    "diameter_hole": "30.75",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "87",
+    "type": "g",
+    "size": "1_1/8",
+    "diameter_hole": "35.5",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "88",
+    "type": "g",
+    "size": "1_1/4",
+    "diameter_hole": "39.5",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "89",
+    "type": "g",
+    "size": "1_3/8",
+    "diameter_hole": "42",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "90",
+    "type": "g",
+    "size": "1_1/2",
+    "diameter_hole": "45.25",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "91",
+    "type": "g",
+    "size": "1_5/8",
+    "diameter_hole": "49.5",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "92",
+    "type": "g",
+    "size": "1_3/4",
+    "diameter_hole": "51",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "93",
+    "type": "g",
+    "size": "2",
+    "diameter_hole": "57",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "94",
+    "type": "g",
+    "size": "2_1/4",
+    "diameter_hole": "63",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "95",
+    "type": "g",
+    "size": "2_3/8",
+    "diameter_hole": "68",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "96",
+    "type": "g",
+    "size": "2_1/2",
+    "diameter_hole": "73",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "97",
+    "type": "g",
+    "size": "2_3/4",
+    "diameter_hole": "79",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "98",
+    "type": "g",
+    "size": "3",
+    "diameter_hole": "85",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "99",
+    "type": "g",
+    "size": "3_1/4",
+    "diameter_hole": "91.5",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "100",
+    "type": "g",
+    "size": "3_1/2",
+    "diameter_hole": "98",
+    "thread_pitch": "2.31"
+  },
+  {
+    "id_screw": "101",
+    "type": "g",
+    "size": "3_3/4",
+    "diameter_hole": "104",
+    "thread_pitch": "2.31"
+  }
+]

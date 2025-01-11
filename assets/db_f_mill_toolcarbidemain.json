@@ -1,0 +1,162 @@
+[
+  {
+    "idf_mill_toolcarbide_main": "1",
+    "diametr": "1",
+    "steel": "0.003",
+    "aluminum": "0.005",
+    "stainles": "0.004",
+    "iron": "0.005"
+  },
+  {
+    "idf_mill_toolcarbide_main": "2",
+    "diametr": "2",
+    "steel": "0.006",
+    "aluminum": "0.008",
+    "stainles": "0.005",
+    "iron": "0.006"
+  },
+  {
+    "idf_mill_toolcarbide_main": "3",
+    "diametr": "3",
+    "steel": "0.009",
+    "aluminum": "0.009",
+    "stainles": "0.009",
+    "iron": "0.015"
+  },
+  {
+    "idf_mill_toolcarbide_main": "4",
+    "diametr": "4",
+    "steel": "0.013",
+    "aluminum": "0.012",
+    "stainles": "0.013",
+    "iron": "0.022"
+  },
+  {
+    "idf_mill_toolcarbide_main": "5",
+    "diametr": "5",
+    "steel": "0.016",
+    "aluminum": "0.015",
+    "stainles": "0.015",
+    "iron": "0.026"
+  },
+  {
+    "idf_mill_toolcarbide_main": "6",
+    "diametr": "6",
+    "steel": "0.018",
+    "aluminum": "0.017",
+    "stainles": "0.018",
+    "iron": "0.031"
+  },
+  {
+    "idf_mill_toolcarbide_main": "7",
+    "diametr": "7",
+    "steel": "0.021",
+    "aluminum": "0.022",
+    "stainles": "0.020",
+    "iron": "0.038"
+  },
+  {
+    "idf_mill_toolcarbide_main": "8",
+    "diametr": "8",
+    "steel": "0.024",
+    "aluminum": "0.023",
+    "stainles": "0.024",
+    "iron": "0.042"
+  },
+  {
+    "idf_mill_toolcarbide_main": "9",
+    "diametr": "9",
+    "steel": "0.026",
+    "aluminum": "0.027",
+    "stainles": "0.028",
+    "iron": "0.048"
+  },
+  {
+    "idf_mill_toolcarbide_main": "10",
+    "diametr": "10",
+    "steel": "0.031",
+    "aluminum": "0.032",
+    "stainles": "0.031",
+    "iron": "0.054"
+  },
+  {
+    "idf_mill_toolcarbide_main": "11",
+    "diametr": "11",
+    "steel": "0.036",
+    "aluminum": "0.037",
+    "stainles": "0.035",
+    "iron": "0.062"
+  },
+  {
+    "idf_mill_toolcarbide_main": "12",
+    "diametr": "12",
+    "steel": "0.041",
+    "aluminum": "0.039",
+    "stainles": "0.041",
+    "iron": "0.070"
+  },
+  {
+    "idf_mill_toolcarbide_main": "13",
+    "diametr": "13",
+    "steel": "0.043",
+    "aluminum": "0.043",
+    "stainles": "0.043",
+    "iron": "0.075"
+  },
+  {
+    "idf_mill_toolcarbide_main": "14",
+    "diametr": "14",
+    "steel": "0.046",
+    "aluminum": "0.046",
+    "stainles": "0.046",
+    "iron": "0.080"
+  },
+  {
+    "idf_mill_toolcarbide_main": "15",
+    "diametr": "15",
+    "steel": "0.049",
+    "aluminum": "0.049",
+    "stainles": "0.049",
+    "iron": "0.085"
+  },
+  {
+    "idf_mill_toolcarbide_main": "16",
+    "diametr": "16",
+    "steel": "0.053",
+    "aluminum": "0.050",
+    "stainles": "0.053",
+    "iron": "0.091"
+  },
+  {
+    "idf_mill_toolcarbide_main": "17",
+    "diametr": "17",
+    "steel": "0.056",
+    "aluminum": "0.059",
+    "stainles": "0.059",
+    "iron": "0.096"
+  },
+  {
+    "idf_mill_toolcarbide_main": "18",
+    "diametr": "18",
+    "steel": "0.061",
+    "aluminum": "0.062",
+    "stainles": "0.062",
+    "iron": "0.102"
+  },
+  {
+    "idf_mill_toolcarbide_main": "19",
+    "diametr": "19",
+    "steel": "0.065",
+    "aluminum": "0.064",
+    "stainles": "0.064",
+    "iron": "0.108"
+  },
+  {
+    "idf_mill_toolcarbide_main": "20",
+    "diametr": "20",
+    "steel": "0.069",
+    "aluminum": "0.066",
+    "stainles": "0.069",
+    "iron": "0.119"
+  }
+]

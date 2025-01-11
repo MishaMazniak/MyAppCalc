@@ -1,0 +1,226 @@
+[
+  {
+    "id_f_drill_toolfolding": "1",
+    "diametr": "8",
+    "steel": "0.12",
+    "aluminum": "0.12",
+    "stainles": "0.10",
+    "iron": "0.13"
+  },
+  {
+    "id_f_drill_toolfolding": "2",
+    "diametr": "9",
+    "steel": "0.13",
+    "aluminum": "0.12",
+    "stainles": "0.11",
+    "iron": "0.13"
+  },
+  {
+    "id_f_drill_toolfolding": "3",
+    "diametr": "10",
+    "steel": "0.13",
+    "aluminum": "0.12",
+    "stainles": "0.12",
+    "iron": "0.13"
+  },
+  {
+    "id_f_drill_toolfolding": "4",
+    "diametr": "11",
+    "steel": "0.14",
+    "aluminum": "0.12",
+    "stainles": "0.12",
+    "iron": "0.13"
+  },
+  {
+    "id_f_drill_toolfolding": "5",
+    "diametr": "12",
+    "steel": "0.15",
+    "aluminum": "0.12",
+    "stainles": "0.12",
+    "iron": "0.13"
+  },
+  {
+    "id_f_drill_toolfolding": "6",
+    "diametr": "13",
+    "steel": "0.20",
+    "aluminum": "0.18",
+    "stainles": "0.16",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "7",
+    "diametr": "14",
+    "steel": "0.21",
+    "aluminum": "0.19",
+    "stainles": "0.16",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "8",
+    "diametr": "15",
+    "steel": "0.22",
+    "aluminum": "0.20",
+    "stainles": "0.16",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "9",
+    "diametr": "16",
+    "steel": "0.23",
+    "aluminum": "0.25",
+    "stainles": "0.16",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "10",
+    "diametr": "17",
+    "steel": "0.24",
+    "aluminum": "0.28",
+    "stainles": "0.16",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "11",
+    "diametr": "18",
+    "steel": "0.30",
+    "aluminum": "0.32",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "12",
+    "diametr": "19",
+    "steel": "0.31",
+    "aluminum": "0.33",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "13",
+    "diametr": "20",
+    "steel": "0.32",
+    "aluminum": "0.34",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "14",
+    "diametr": "21",
+    "steel": "0.33",
+    "aluminum": "0.35",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "15",
+    "diametr": "22",
+    "steel": "0.34",
+    "aluminum": "0.36",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "16",
+    "diametr": "23",
+    "steel": "0.35",
+    "aluminum": "0.38",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "17",
+    "diametr": "24",
+    "steel": "0.36",
+    "aluminum": "0.40",
+    "stainles": "0.22",
+    "iron": "0.18"
+  },
+  {
+    "id_f_drill_toolfolding": "18",
+    "diametr": "25",
+    "steel": "0.38",
+    "aluminum": "0.41",
+    "stainles": "0.24",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolfolding": "19",
+    "diametr": "26",
+    "steel": "0.39",
+    "aluminum": "0.42",
+    "stainles": "0.24",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolfolding": "20",
+    "diametr": "27",
+    "steel": "0.40",
+    "aluminum": "0.43",
+    "stainles": "0.24",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolfolding": "21",
+    "diametr": "28",
+    "steel": "0.40",
+    "aluminum": "0.44",
+    "stainles": "0.24",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolfolding": "22",
+    "diametr": "29",
+    "steel": "0.41",
+    "aluminum": "0.45",
+    "stainles": "0.24",
+    "iron": "0.25"
+  },
+  {
+    "id_f_drill_toolfolding": "23",
+    "diametr": "30",
+    "steel": "0.42",
+    "aluminum": "0.46",
+    "stainles": "0.24",
+    "iron": "0.26"
+  },
+  {
+    "id_f_drill_toolfolding": "24",
+    "diametr": "31",
+    "steel": "0.43",
+    "aluminum": "0.47",
+    "stainles": "0.24",
+    "iron": "0.26"
+  },
+  {
+    "id_f_drill_toolfolding": "25",
+    "diametr": "32",
+    "steel": "0.43",
+    "aluminum": "0.48",
+    "stainles": "0.24",
+    "iron": "0.26"
+  },
+  {
+    "id_f_drill_toolfolding": "26",
+    "diametr": "33",
+    "steel": "0.43",
+    "aluminum": "0.49",
+    "stainles": "0.24",
+    "iron": "0.27"
+  },
+  {
+    "id_f_drill_toolfolding": "27",
+    "diametr": "34",
+    "steel": "0.43",
+    "aluminum": "0.50",
+    "stainles": "0.24",
+    "iron": "0.27"
+  },
+  {
+    "id_f_drill_toolfolding": "28",
+    "diametr": "35",
+    "steel": "0.43",
+    "aluminum": "0.50",
+    "stainles": "0.24",
+    "iron": "0.28"
+  }
+]

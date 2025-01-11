@@ -1,0 +1,218 @@
+[
+  {
+    "id_f_mill_toolhss": "1",
+    "diametr": "2",
+    "steel": "0.008",
+    "aluminum": "0.008",
+    "stainles": "0.003",
+    "iron": "0.004"
+  },
+  {
+    "id_f_mill_toolhss": "2",
+    "diametr": "3",
+    "steel": "0.012",
+    "aluminum": "0.012",
+    "stainles": "0.004",
+    "iron": "0.007"
+  },
+  {
+    "id_f_mill_toolhss": "3",
+    "diametr": "4",
+    "steel": "0.017",
+    "aluminum": "0.017",
+    "stainles": "0.006",
+    "iron": "0.009"
+  },
+  {
+    "id_f_mill_toolhss": "4",
+    "diametr": "5",
+    "steel": "0.021",
+    "aluminum": "0.029",
+    "stainles": "0.008",
+    "iron": "0.012"
+  },
+  {
+    "id_f_mill_toolhss": "5",
+    "diametr": "6",
+    "steel": "0.025",
+    "aluminum": "0.031",
+    "stainles": "0.009",
+    "iron": "0.014"
+  },
+  {
+    "id_f_mill_toolhss": "6",
+    "diametr": "7",
+    "steel": "0.030",
+    "aluminum": "0.036",
+    "stainles": "0.011",
+    "iron": "0.016"
+  },
+  {
+    "id_f_mill_toolhss": "7",
+    "diametr": "8",
+    "steel": "0.034",
+    "aluminum": "0.039",
+    "stainles": "0.012",
+    "iron": "0.019"
+  },
+  {
+    "id_f_mill_toolhss": "8",
+    "diametr": "9",
+    "steel": "0.038",
+    "aluminum": "0.041",
+    "stainles": "0.014",
+    "iron": "0.021"
+  },
+  {
+    "id_f_mill_toolhss": "9",
+    "diametr": "10",
+    "steel": "0.045",
+    "aluminum": "0.049",
+    "stainles": "0.022",
+    "iron": "0.028"
+  },
+  {
+    "id_f_mill_toolhss": "10",
+    "diametr": "11",
+    "steel": "0.063",
+    "aluminum": "0.066",
+    "stainles": "0.024",
+    "iron": "0.031"
+  },
+  {
+    "id_f_mill_toolhss": "11",
+    "diametr": "12",
+    "steel": "0.069",
+    "aluminum": "0.072",
+    "stainles": "0.026",
+    "iron": "0.034"
+  },
+  {
+    "id_f_mill_toolhss": "12",
+    "diametr": "13",
+    "steel": "0.074",
+    "aluminum": "0.076",
+    "stainles": "0.028",
+    "iron": "0.037"
+  },
+  {
+    "id_f_mill_toolhss": "13",
+    "diametr": "14",
+    "steel": "0.080",
+    "aluminum": "0.082",
+    "stainles": "0.031",
+    "iron": "0.040"
+  },
+  {
+    "id_f_mill_toolhss": "14",
+    "diametr": "15",
+    "steel": "0.086",
+    "aluminum": "0.088",
+    "stainles": "0.033",
+    "iron": "0.043"
+  },
+  {
+    "id_f_mill_toolhss": "15",
+    "diametr": "16",
+    "steel": "0.092",
+    "aluminum": "0.096",
+    "stainles": "0.035",
+    "iron": "0.046"
+  },
+  {
+    "id_f_mill_toolhss": "16",
+    "diametr": "17",
+    "steel": "0.097",
+    "aluminum": "0.102",
+    "stainles": "0.037",
+    "iron": "0.048"
+  },
+  {
+    "id_f_mill_toolhss": "17",
+    "diametr": "18",
+    "steel": "0.103",
+    "aluminum": "0.109",
+    "stainles": "0.040",
+    "iron": "0.051"
+  },
+  {
+    "id_f_mill_toolhss": "18",
+    "diametr": "19",
+    "steel": "0.109",
+    "aluminum": "0.115",
+    "stainles": "0.042",
+    "iron": "0.054"
+  },
+  {
+    "id_f_mill_toolhss": "19",
+    "diametr": "20",
+    "steel": "0.115",
+    "aluminum": "0.145",
+    "stainles": "0.047",
+    "iron": "0.056"
+  },
+  {
+    "id_f_mill_toolhss": "20",
+    "diametr": "21",
+    "steel": "0.145",
+    "aluminum": "0.155",
+    "stainles": "0.037",
+    "iron": "0.040"
+  },
+  {
+    "id_f_mill_toolhss": "21",
+    "diametr": "22",
+    "steel": "0.101",
+    "aluminum": "0.112",
+    "stainles": "0.039",
+    "iron": "0.051"
+  },
+  {
+    "id_f_mill_toolhss": "22",
+    "diametr": "23",
+    "steel": "0.106",
+    "aluminum": "0.118",
+    "stainles": "0.040",
+    "iron": "0.054"
+  },
+  {
+    "id_f_mill_toolhss": "23",
+    "diametr": "24",
+    "steel": "0.110",
+    "aluminum": "0.120",
+    "stainles": "0.042",
+    "iron": "0.056"
+  },
+  {
+    "id_f_mill_toolhss": "24",
+    "diametr": "25",
+    "steel": "0.115",
+    "aluminum": "0.130",
+    "stainles": "0.044",
+    "iron": "0.058"
+  },
+  {
+    "id_f_mill_toolhss": "25",
+    "diametr": "26",
+    "steel": "0.120",
+    "aluminum": "0.135",
+    "stainles": "0.046",
+    "iron": "0.061"
+  },
+  {
+    "id_f_mill_toolhss": "26",
+    "diametr": "27",
+    "steel": "0.125",
+    "aluminum": "0.139",
+    "stainles": "0.048",
+    "iron": "0.063"
+  },
+  {
+    "id_f_mill_toolhss": "27",
+    "diametr": "28",
+    "steel": "0.129",
+    "aluminum": "0.140",
+    "stainles": "0.049",
+    "iron": "0.065"
+  }
+]

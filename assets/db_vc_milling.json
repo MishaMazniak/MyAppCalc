@@ -1,0 +1,34 @@
+[
+  {
+    "id_vc_milling": "1",
+    "material": "steel",
+    "toolhss": "22",
+    "toolhssMax": "30",
+    "toolcarbide": "30",
+    "toolcarbideMax": "90"
+  },
+  {
+    "id_vc_milling": "2",
+    "material": "aluminum",
+    "toolhss": "70",
+    "toolhssMax": "150",
+    "toolcarbide": "167",
+    "toolcarbideMax": "300"
+  },
+  {
+    "id_vc_milling": "3",
+    "material": "stainles",
+    "toolhss": "10",
+    "toolhssMax": "10",
+    "toolcarbide": "30",
+    "toolcarbideMax": "50"
+  },
+  {
+    "id_vc_milling": "4",
+    "material": "iron",
+    "toolhss": "22",
+    "toolhssMax": "30",
+    "toolcarbide": "40",
+    "toolcarbideMax": "90"
+  }
+]

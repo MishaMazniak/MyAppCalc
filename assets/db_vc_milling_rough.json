@@ -1,0 +1,26 @@
+[
+  {
+    "id_vc_milling_rough": "1",
+    "material": "steel",
+    "toolhss": "30",
+    "toolhssMax": "40"
+  },
+  {
+    "id_vc_milling_rough": "2",
+    "material": "aluminum",
+    "toolhss": "80",
+    "toolhssMax": "170"
+  },
+  {
+    "id_vc_milling_rough": "3",
+    "material": "stainles",
+    "toolhss": "13",
+    "toolhssMax": "14"
+  },
+  {
+    "id_vc_milling_rough": "4",
+    "material": "iron",
+    "toolhss": "38",
+    "toolhssMax": "40"
+  }
+]

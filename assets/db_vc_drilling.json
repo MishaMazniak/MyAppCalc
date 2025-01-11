@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "material": "steel",
+    "toolhss": "15",
+    "toolhssMax": "25",
+    "toolcarbide": "70",
+    "toolcarbideMax": "95",
+    "toolfolding": "80",
+    "toolfoldingMax": "100"
+  },
+  {
+    "id": "2",
+    "material": "aluminum",
+    "toolhss": "30",
+    "toolhssMax": "40",
+    "toolcarbide": "130",
+    "toolcarbideMax": "270",
+    "toolfolding": "110",
+    "toolfoldingMax": "225"
+  },
+  {
+    "id": "3",
+    "material": "stainles",
+    "toolhss": "8",
+    "toolhssMax": "15",
+    "toolcarbide": "35",
+    "toolcarbideMax": "45",
+    "toolfolding": "38",
+    "toolfoldingMax": "56"
+  },
+  {
+    "id": "4",
+    "material": "iron",
+    "toolhss": "5",
+    "toolhssMax": "15",
+    "toolcarbide": "80",
+    "toolcarbideMax": "100",
+    "toolfolding": "100",
+    "toolfoldingMax": "146"
+  }
+]
