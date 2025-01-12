@@ -5,6 +5,7 @@ import { DataContext } from "../ContextAPI/DataContext";
 
 import InputForDrilling from "./InputForDrilling";
 import InputForMilling from "./InputForMilling";
+import InputForBoring from "./InputForBoring";
 import InputForMillingPlate from "./InputForMillingPlate";
 
 export default function InputForm() {
@@ -24,10 +25,16 @@ export default function InputForm() {
   });
 
   const setValueFromInput = (name, value) => {
-    setContextInput((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setContextInput((prevState) => {
+      const updatedState = {
+        ...prevState,
+        [name]: value,
+      };
+      if (!updatedState.z || isNaN(updatedState.z)) {
+        updatedState.z = 2;
+      }
+      return updatedState;
+    });
   };
 
   useEffect(() => {
@@ -49,6 +56,8 @@ export default function InputForm() {
       ...prev,
       ...checkCatalog_isNaN,
       ...checkInput_isNaN,
+      ap: String(contextInput.d),
+      ae: String(contextInput.d * 0.1),
     }));
   }, [contextInput, contextCatalog]);
   return (
@@ -65,6 +74,11 @@ export default function InputForm() {
         />
       ) : namePage === "Milling" && contextTypeTools === "toolfolding" ? (
         <InputForMillingPlate
+          placeholderData={placeholderData}
+          setValueFromInput={setValueFromInput}
+        />
+      ) : namePage === "Boring" ? (
+        <InputForBoring
           placeholderData={placeholderData}
           setValueFromInput={setValueFromInput}
         />

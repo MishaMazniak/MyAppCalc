@@ -16,6 +16,8 @@ export const DataProvider = ({ children }) => {
     z: 0,
     ap: 0,
     ae: 0,
+    D: 0,
+    L: 0,
   });
   const [contextCatalog, setContextCatalog] = useState({
     Vcmin: 0,
@@ -41,6 +43,17 @@ export const DataProvider = ({ children }) => {
     Fmin: 0,
     Fmax: 0,
   });
+  const [contextCatalogBoring, setContextCatalogBoring] = useState({
+    coefficient_L_d: "",
+    d: "",
+    vc_Min: "",
+    vc_Max: "",
+    R_plate: "",
+    f_Min: "",
+    f_Max: "",
+    ap_Min: "",
+    ap_Max: "",
+  });
 
   return (
     <DataContext.Provider
@@ -63,6 +76,8 @@ export const DataProvider = ({ children }) => {
         setContextTypeProces,
         contextTypePlate,
         setContextTypePlate,
+        contextCatalogBoring,
+        setContextCatalogBoring,
       }}
     >
       {children}

@@ -4,6 +4,7 @@ import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
 
 export default function CalkOwnerParameters() {
+  const { namePage } = useContext(DataContext);
   const { contextInput } = useContext(DataContext);
   const { contextTypeTools } = useContext(DataContext);
 
@@ -16,10 +17,10 @@ export default function CalkOwnerParameters() {
     let s;
     let f;
     s = Math.floor((contextInput.Vc * 1000) / (Math.PI * contextInput.d));
-    if (contextTypeTools !== "toolfolding") {
+    if (namePage === "Drilling") {
       f = Math.floor(s * contextInput.f);
     }
-    if (contextTypeTools === "toolfolding") {
+    if (namePage === "Milling" && contextTypeTools === "toolfolding") {
       f = Math.floor(s * contextInput.fz * contextInput.z);
     }
     s = isNaN(s) ? 0 : s;

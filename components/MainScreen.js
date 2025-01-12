@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useFocusEffect } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -13,6 +14,7 @@ import { gStyle } from "../styles/styles";
 
 export default function MainScreen({ navigation }) {
   const { setNamePage } = useContext(DataContext);
+  const { setContextInput } = useContext(DataContext);
 
   const startCalc = (nameOpenedPage) => {
     navigation.navigate(nameOpenedPage);
@@ -24,6 +26,12 @@ export default function MainScreen({ navigation }) {
   const handleLanguageChange = (lang) => {
     // setLanguage(lang);
   };
+  useFocusEffect(
+    React.useCallback(() => {
+      setContextInput({ d: 2, Vc: 0, f: 0, z: 0, ap: 0, ae: 0 });
+      return () => {};
+    }, [])
+  );
   return (
     <ScrollView contentContainerStyle={gStyle.scrollContainer}>
       <View style={gStyle.main}>

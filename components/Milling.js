@@ -21,7 +21,6 @@ import db_f_mill_toolcarbidemain from "../assets/db_f_mill_toolcarbidemain.json"
 import db_milling_plates from "../assets/db_milling_plates.json";
 
 export default function Drilling() {
-  const { setContextInput } = useContext(DataContext);
   const { setContextCatalog } = useContext(DataContext);
   const { setContextResult } = useContext(DataContext);
   const { setContextCatalogPlate } = useContext(DataContext);
@@ -43,12 +42,6 @@ export default function Drilling() {
 
   // change data input and coef Ap Ae for HSS
   useEffect(() => {
-    if (contextInput.z === 0 || isNaN(contextInput.z)) {
-      setContextInput((prevState) => ({
-        ...prevState,
-        z: 2,
-      }));
-    }
     if (contextTypeTools === "toolhss") {
       // change "d" for DB
       if (contextInput.d != 0) {
@@ -95,13 +88,13 @@ export default function Drilling() {
           ae: valCoefAe,
         });
       }
-    }
-    if (contextTypeTools === "toolcarbide") {
-      if (contextInput.d >= 1 && contextInput.d <= 20) {
-        setValueDiameterForDB(contextInput.d.toFixed(0));
-      } else if (contextInput.d > 20) {
-        setValueDiameterForDB(20);
-        alert("Max diameter 20");
+      if (contextTypeTools === "toolcarbide") {
+        if (contextInput.d >= 1 && contextInput.d <= 20) {
+          setValueDiameterForDB(contextInput.d.toFixed(0));
+        } else if (contextInput.d > 20) {
+          setValueDiameterForDB(20);
+          alert("Max diameter 20");
+        }
       }
     }
   }, [contextInput, contextTypeTools]);

@@ -3,14 +3,15 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
 
-import ImgTools from "./ImgToolsMilling";
+import ImgToolsMilling from "./ImgToolsMilling";
 import ImgToolsPlates from "./ImgToolsPlates";
+import ImgToolsBoring from "./ImgToolsBoring";
 
 export default function TypeToolsImg() {
   const { contextTypeTools } = useContext(DataContext);
   const { contextCatalogPlate } = useContext(DataContext);
+  const { namePage } = useContext(DataContext);
 
-  const [chooseBoxImg, setChooseBoxImg] = useState("milling");
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const imageMapPlate = {
@@ -23,6 +24,7 @@ export default function TypeToolsImg() {
     tpkr: require("../assets/pl-TPKR.png"),
     vcgt: require("../assets/pl-VCGT.png"),
     vhm: require("../assets/vhm-icon.png"),
+    bor: require("../assets/vhm-icon.png"),
   };
   const [iconTypeTools, setIconTypeTools] = useState();
 
@@ -30,13 +32,18 @@ export default function TypeToolsImg() {
     setIsAccordionOpen(!isAccordionOpen);
   };
   useEffect(() => {
-    if (contextTypeTools === "toolhss" || contextTypeTools === "toolcarbide") {
-      setChooseBoxImg("milling");
+    if (namePage === "milling") {
+      if (
+        contextTypeTools === "toolhss" ||
+        contextTypeTools === "toolcarbide"
+      ) {
+        setIconTypeTools(imageMapPlate.vhm);
+      } else if (contextTypeTools === "toolfolding") {
+        setIconTypeTools(imageMapPlate[contextCatalogPlate.name]);
+      }
+    } else if (namePage === "Boring") {
       setIconTypeTools(imageMapPlate.vhm);
-    } else if (contextTypeTools === "toolfolding") {
-      setChooseBoxImg("folding");
-      setIconTypeTools(imageMapPlate[contextCatalogPlate.name]);
-    } else setChooseBoxImg("boring");
+    }
   }, [contextTypeTools, contextCatalogPlate]);
   return (
     <View style={gStyle.container}>
@@ -65,10 +72,12 @@ export default function TypeToolsImg() {
       </TouchableOpacity>
 
       {isAccordionOpen &&
-        (chooseBoxImg === "milling" ? (
-          <ImgTools />
-        ) : chooseBoxImg === "folding" ? (
+        (namePage === "milling" ? (
+          <ImgToolsMilling />
+        ) : namePage === "folding" ? (
           <ImgToolsPlates />
+        ) : namePage === "Boring" ? (
+          <ImgToolsBoring />
         ) : null)}
     </View>
   );
