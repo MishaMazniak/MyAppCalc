@@ -44,8 +44,8 @@ export const DataProvider = ({ children }) => {
     Fmax: 0,
   });
   const [contextCatalogBoring, setContextCatalogBoring] = useState({
+    material: "",
     coefficient_L_d: "",
-    d: "",
     vc_Min: "",
     vc_Max: "",
     R_plate: "",

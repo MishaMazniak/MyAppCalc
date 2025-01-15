@@ -28,7 +28,7 @@ export default function MainScreen({ navigation }) {
   };
   useFocusEffect(
     React.useCallback(() => {
-      setContextInput({ d: 2, Vc: 0, f: 0, z: 0, ap: 0, ae: 0 });
+      setContextInput({ d: 2, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
       return () => {};
     }, [])
   );

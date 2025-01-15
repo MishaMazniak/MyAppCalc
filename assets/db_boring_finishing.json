@@ -14,7 +14,7 @@
   {
     "id_boring_finishing": "2",
     "material": "steel",
-    "coefficient_L_d": "4.0",
+    "coefficient_L_d": "4",
     "vc_Min": "150",
     "vc_Max": "200",
     "R_plate": "0.2",
@@ -50,7 +50,7 @@
   {
     "id_boring_finishing": "5",
     "material": "stainles",
-    "coefficient_L_d": "4.0",
+    "coefficient_L_d": "4",
     "vc_Min": "100",
     "vc_Max": "140",
     "R_plate": "0.2",
@@ -86,7 +86,7 @@
   {
     "id_boring_finishing": "8",
     "material": "iron",
-    "coefficient_L_d": "4.0",
+    "coefficient_L_d": "4",
     "vc_Min": "100",
     "vc_Max": "140",
     "R_plate": "0.2",
@@ -122,7 +122,7 @@
   {
     "id_boring_finishing": "11",
     "material": "aluminum",
-    "coefficient_L_d": "4.0",
+    "coefficient_L_d": "4",
     "vc_Min": "250",
     "vc_Max": "350",
     "R_plate": "0.2",

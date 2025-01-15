@@ -17,7 +17,7 @@ export default function CalkOwnerParameters() {
     let s;
     let f;
     s = Math.floor((contextInput.Vc * 1000) / (Math.PI * contextInput.d));
-    if (namePage === "Drilling") {
+    if (namePage === "Drilling" || namePage === "Boring") {
       f = Math.floor(s * contextInput.f);
     }
     if (namePage === "Milling" && contextTypeTools === "toolfolding") {

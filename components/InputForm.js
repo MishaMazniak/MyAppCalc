@@ -17,6 +17,8 @@ export default function InputForm() {
 
   const [placeholderData, setPlaceholderData] = useState({
     d: "",
+    D: "",
+    L: "",
     Vcmin: "",
     f: "",
     z: "",
@@ -36,7 +38,7 @@ export default function InputForm() {
       return updatedState;
     });
   };
-
+  // data from placeholder
   useEffect(() => {
     const checkCatalog_isNaN = Object.entries(contextCatalog).reduce(
       (acc, [key, value]) => {

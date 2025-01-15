@@ -8,9 +8,10 @@ import ImgToolsPlates from "./ImgToolsPlates";
 import ImgToolsBoring from "./ImgToolsBoring";
 
 export default function TypeToolsImg() {
+  const { namePage } = useContext(DataContext);
   const { contextTypeTools } = useContext(DataContext);
   const { contextCatalogPlate } = useContext(DataContext);
-  const { namePage } = useContext(DataContext);
+  const { contextTypeProces } = useContext(DataContext);
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
@@ -24,7 +25,8 @@ export default function TypeToolsImg() {
     tpkr: require("../assets/pl-TPKR.png"),
     vcgt: require("../assets/pl-VCGT.png"),
     vhm: require("../assets/vhm-icon.png"),
-    bor: require("../assets/vhm-icon.png"),
+    bor_rough: require("../assets/boring-rough.jpg"),
+    bor_finish: require("../assets/Boring-finish.jpg"),
   };
   const [iconTypeTools, setIconTypeTools] = useState();
 
@@ -32,7 +34,7 @@ export default function TypeToolsImg() {
     setIsAccordionOpen(!isAccordionOpen);
   };
   useEffect(() => {
-    if (namePage === "milling") {
+    if (namePage === "Milling") {
       if (
         contextTypeTools === "toolhss" ||
         contextTypeTools === "toolcarbide"
@@ -42,9 +44,13 @@ export default function TypeToolsImg() {
         setIconTypeTools(imageMapPlate[contextCatalogPlate.name]);
       }
     } else if (namePage === "Boring") {
-      setIconTypeTools(imageMapPlate.vhm);
+      if (contextTypeProces === "roughing") {
+        setIconTypeTools(imageMapPlate.bor_rough);
+      } else {
+        setIconTypeTools(imageMapPlate.bor_finish);
+      }
     }
-  }, [contextTypeTools, contextCatalogPlate]);
+  }, [contextTypeTools, contextCatalogPlate, contextTypeProces, namePage]);
   return (
     <View style={gStyle.container}>
       <TouchableOpacity
@@ -72,9 +78,9 @@ export default function TypeToolsImg() {
       </TouchableOpacity>
 
       {isAccordionOpen &&
-        (namePage === "milling" ? (
+        (namePage === "Milling" ? (
           <ImgToolsMilling />
-        ) : namePage === "folding" ? (
+        ) : namePage === "Milling" && contextTypeTools === "toolfolding" ? (
           <ImgToolsPlates />
         ) : namePage === "Boring" ? (
           <ImgToolsBoring />
