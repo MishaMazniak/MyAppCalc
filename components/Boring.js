@@ -21,30 +21,30 @@ export default function Boring() {
   const { contextCatalogBoring } = useContext(DataContext);
 
   const { setContextCatalogBoring } = useContext(DataContext);
+  const { setContextResult } = useContext(DataContext);
   // 'fetch'
   useEffect(() => {
     let dataFromDB;
+    let coefL_D = 0;
 
     let tableCoef = null;
     let tableD = null;
 
     if (contextInput.D && contextInput.d && contextInput.L) {
-      let coefL_d = contextInput.L / contextInput.d;
-      coefL_d < 4
-        ? (tableCoef = 2.5)
-        : coefL_d < 6.3
-        ? (tableCoef = 4.0)
-        : coefL_d > 6.3
-        ? (tableCoef = 6.3)
-        : "";
+      coefL_D = contextInput.L / contextInput.D;
 
-      contextInput.d <= 37
-        ? (tableD = 37)
-        : contextInput.d > 37 && contextInput.d <= 120
-        ? (tableD = 120)
-        : contextInput.d > 120
-        ? (tableD = 121)
-        : "";
+      if (coefL_D < 4) {
+        tableCoef = 2.5;
+      } else if (coefL_D >= 4 && coefL_D < 6.3) {
+        tableCoef = 4;
+      } else tableCoef = 6.3;
+
+      if (contextInput.d <= 37) {
+        tableD = 37;
+      } else if (contextInput.d > 37 && contextInput.d <= 120) {
+        tableD = 120;
+      } else tableD = 121;
+
       if (contextTypeProces === "roughing") {
         // DB
         dataFromDB = db_boring_rough.find(
@@ -75,7 +75,23 @@ export default function Boring() {
     }
   }, [contextInput, contextTypeProces, contextTypeMaterial]);
   useEffect(() => {
-    console.log(contextCatalogBoring);
+    let Smin = 0;
+    let Smax = 0;
+    let Fmin = 0;
+    let Fmax = 0;
+    if (contextCatalogBoring.material !== "") {
+      // 'S' for "info catalog"
+      Smin = Math.floor(
+        (contextCatalogBoring.vc_Min * 1000) / (contextInput.d * 3.14)
+      );
+      Smax = Math.floor(
+        (contextCatalogBoring.vc_Max * 1000) / (contextInput.d * 3.14)
+      );
+      // 'F' for "info catalog"
+      Fmin = Math.floor(Smin * contextCatalogBoring.f_Min);
+      Fmax = Math.floor(Smax * contextCatalogBoring.f_Max);
+    }
+    setContextResult({ Smin, Smax, Fmin, Fmax });
   }, [contextCatalogBoring]);
   return (
     <ScrollView contentContainerStyle={gStyle.scrollContainer}>

@@ -15,6 +15,7 @@ import { gStyle } from "../styles/styles";
 export default function MainScreen({ navigation }) {
   const { setNamePage } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
+  const { setContextCatalog } = useContext(DataContext);
 
   const startCalc = (nameOpenedPage) => {
     navigation.navigate(nameOpenedPage);
@@ -29,6 +30,7 @@ export default function MainScreen({ navigation }) {
   useFocusEffect(
     React.useCallback(() => {
       setContextInput({ d: 2, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
+      setContextCatalog({ Vcmin: 0, Vcmax: 0, f: 0 });
       return () => {};
     }, [])
   );

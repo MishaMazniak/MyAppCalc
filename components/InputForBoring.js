@@ -11,7 +11,7 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           style={gStyle.input}
           keyboardType="numeric"
           onChangeText={(value) =>
-            setValueFromInput("D", Math.abs(parseFloat(value)))
+            setValueFromInput("d", Math.abs(parseFloat(value)))
           }
           placeholder={placeholderData.d}
         />
@@ -23,7 +23,7 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           style={gStyle.input}
           keyboardType="numeric"
           onChangeText={(value) =>
-            setValueFromInput("d", Math.abs(parseFloat(value)))
+            setValueFromInput("D", Math.abs(parseFloat(value)))
           }
           placeholder={placeholderData.z}
         />

@@ -79,9 +79,11 @@ export default function TypeToolsImg() {
 
       {isAccordionOpen &&
         (namePage === "Milling" ? (
-          <ImgToolsMilling />
-        ) : namePage === "Milling" && contextTypeTools === "toolfolding" ? (
-          <ImgToolsPlates />
+          contextTypeTools === "toolfolding" ? (
+            <ImgToolsPlates />
+          ) : (
+            <ImgToolsMilling />
+          )
         ) : namePage === "Boring" ? (
           <ImgToolsBoring />
         ) : null)}
