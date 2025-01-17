@@ -10,7 +10,7 @@ export const DataProvider = ({ children }) => {
   const [contextTypePlate, setContextTypePlate] = useState("tngx");
 
   const [contextInput, setContextInput] = useState({
-    d: 2,
+    d: 0,
     Vc: 0,
     f: 0,
     z: 0,
@@ -37,12 +37,6 @@ export const DataProvider = ({ children }) => {
     vc_Max: "",
     f: "",
   });
-  const [contextResult, setContextResult] = useState({
-    Smin: 0,
-    Smax: 0,
-    Fmin: 0,
-    Fmax: 0,
-  });
   const [contextCatalogBoring, setContextCatalogBoring] = useState({
     material: "",
     coefficient_L_d: "",
@@ -53,6 +47,12 @@ export const DataProvider = ({ children }) => {
     f_Max: "",
     ap_Min: "",
     ap_Max: "",
+  });
+  const [contextResult, setContextResult] = useState({
+    Smin: 0,
+    Smax: 0,
+    Fmin: 0,
+    Fmax: 0,
   });
 
   return (

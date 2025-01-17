@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, TextInput, Text, SafeAreaView, View } from "react-native";
 import { gStyle } from "../styles/styles";
+import { DataContext } from "../ContextAPI/DataContext";
 
 export default function InputForDrilling({
   placeholderData,
   setValueFromInput,
 }) {
+  const { contextInput } = useContext(DataContext);
   return (
     <SafeAreaView>
       <View style={gStyle.inputGroup}>
@@ -16,7 +18,6 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("d", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.d}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -28,7 +29,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("Vc", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.Vcmin}
+          placeholder={contextInput.d ? placeholderData.Vcmin : undefined}
         />
         <Text style={gStyle.inputText}>m/min</Text>
       </View>
@@ -40,7 +41,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("f", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.f}
+          placeholder={contextInput.d ? placeholderData.f : undefined}
         />
         <Text style={gStyle.inputText}>mm/ob</Text>
       </View>

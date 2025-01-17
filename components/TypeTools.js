@@ -5,8 +5,8 @@ import { DataContext } from "../ContextAPI/DataContext";
 
 export default function TypeTools() {
   const { setContextTypeTools } = useContext(DataContext);
-  const { contextTypeMaterial } = useContext(DataContext);
   const { setContextTypePlate } = useContext(DataContext);
+  const { contextTypeMaterial } = useContext(DataContext);
 
   const [selectedOption, setSelectedOption] = useState("toolhss");
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);

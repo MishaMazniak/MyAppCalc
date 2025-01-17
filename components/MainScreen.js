@@ -14,8 +14,15 @@ import { gStyle } from "../styles/styles";
 
 export default function MainScreen({ navigation }) {
   const { setNamePage } = useContext(DataContext);
+  const { setContextTypeProces } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
+  const { setContextTypeTools } = useContext(DataContext);
+  const { setContextTypePlate } = useContext(DataContext);
+  const { setContextTypeMaterial } = useContext(DataContext);
   const { setContextCatalog } = useContext(DataContext);
+  const { setContextCatalogPlate } = useContext(DataContext);
+  const { setContextCatalogBoring } = useContext(DataContext);
+  const { setContextResult } = useContext(DataContext);
 
   const startCalc = (nameOpenedPage) => {
     navigation.navigate(nameOpenedPage);
@@ -29,8 +36,43 @@ export default function MainScreen({ navigation }) {
   };
   useFocusEffect(
     React.useCallback(() => {
-      setContextInput({ d: 2, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
-      setContextCatalog({ Vcmin: 0, Vcmax: 0, f: 0 });
+      setContextInput({ d: 0, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
+      setContextTypeTools("toolhss");
+      // setContextTypeProces("roughing");
+      // setContextTypePlate("tngx");
+      // setContextTypeMaterial("steel");
+      // setContextCatalog({ Vcmin: 0, Vcmax: 0, f: 0 });
+      // setContextCatalogPlate({
+      //   name: "tngx",
+      //   website: "",
+      //   material: "",
+      //   hardness: "",
+      //   ap_Min: "",
+      //   ap_Max: "",
+      //   f_Min: "",
+      //   f_Max: "",
+      //   vc_Min: "",
+      //   vc_Max: "",
+      //   f: "",
+      // });
+      // setContextCatalogBoring({
+      //   material: "",
+      //   coefficient_L_d: "",
+      //   vc_Min: "",
+      //   vc_Max: "",
+      //   R_plate: "",
+      //   f_Min: "",
+      //   f_Max: "",
+      //   ap_Min: "",
+      //   ap_Max: "",
+      // });
+      // setContextResult({
+      //   Smin: 0,
+      //   Smax: 0,
+      //   Fmin: 0,
+      //   Fmax: 0,
+      // });
+
       return () => {};
     }, [])
   );

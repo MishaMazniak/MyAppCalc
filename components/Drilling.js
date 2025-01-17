@@ -25,46 +25,34 @@ export default function Drilling() {
   const { setContextResult } = useContext(DataContext);
 
   useEffect(() => {
-    if (contextInput.d > 20 && contextTypeTools === "toolcarbide")
-      alert("Catalog has carbide tools of size 1 - 20 ");
-    if (contextInput.d > 28 && contextTypeTools === "toolfolding")
-      alert("Catalog has folding tools of size 1 - 28 ");
-
+    let dataVC = 0;
+    let dataF = 0;
+    let speedRotation = 0;
+    let integerDiameter = Math.floor(contextInput.d);
     // Vc_min + Vc_max forom database
-    const dataFromDB = db_vc_drilling.find(
+    dataVC = db_vc_drilling.find(
       (item) => item.material === `${contextTypeMaterial}`
     );
-    if (dataFromDB && dataFromDB[contextTypeTools]) {
-      setContextCatalog((prevState) => ({
-        ...prevState,
-        Vcmin: dataFromDB[contextTypeTools],
-        Vcmax: dataFromDB[`${contextTypeTools}Max`],
-      }));
-    }
     // 'f' from database
-    let speed = 0;
-    const diameter = Math.floor(contextInput.d);
-
     if (contextTypeTools === "toolhss") {
-      const fHSS = db_f_drill_toolhss.find(
-        (item) => Number(item.diametr) === diameter
+      dataF = db_f_drill_toolhss.find(
+        (item) => Number(item.diametr) === integerDiameter
       );
-      speed = fHSS ? fHSS[contextTypeMaterial] : 0;
     } else if (contextTypeTools === "toolcarbide") {
-      const fVHM = db_f_drill_toolcarbide.find(
-        (item) => Number(item.diametr) === diameter
+      dataF = db_f_drill_toolcarbide.find(
+        (item) => Number(item.diametr) === integerDiameter
       );
-      speed = fVHM ? fVHM[contextTypeMaterial] : 0;
     } else if (contextTypeTools === "toolfolding") {
-      const fPlate = db_f_drill_toolfolding.find(
-        (item) => Number(item.diametr) === diameter
+      dataF = db_f_drill_toolfolding.find(
+        (item) => Number(item.diametr) === integerDiameter
       );
-      speed = fPlate ? fPlate[contextTypeMaterial] : 0;
     }
-    setContextCatalog((prevState) => ({
-      ...prevState,
-      f: speed,
-    }));
+    speedRotation = dataF ? dataF[contextTypeMaterial] : 0;
+    setContextCatalog({
+      Vcmin: dataVC[contextTypeTools],
+      Vcmax: dataVC[`${contextTypeTools}Max`],
+      f: speedRotation,
+    });
   }, [contextInput, contextTypeTools, contextTypeMaterial]);
 
   useEffect(() => {
@@ -89,11 +77,9 @@ export default function Drilling() {
     <ScrollView contentContainerStyle={gStyle.scrollContainer}>
       <SafeAreaView style={gStyle.main}>
         <InputForm />
-        {contextInput.d !== 0 &&
-        (contextInput.Vc !== 0 || contextInput.f !== 0) ? (
+        {contextInput.d && (contextInput.Vc || contextInput.f) ? (
           <CalkOwnerParameters />
         ) : null}
-
         <TypeTools />
         <TypeMaterial />
         <DataFromCatalog />

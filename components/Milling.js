@@ -34,7 +34,7 @@ export default function Drilling() {
   const { contextTypePlate } = useContext(DataContext);
 
   const [isInputPlate, setIsInputPlate] = useState(true);
-  const [valueDiameterForDB, setValueDiameterForDB] = useState(2);
+  const [valueDiameterForDB, setValueDiameterForDB] = useState(0);
   const [coefApAe, setCoefApAe] = useState({
     ap: 0,
     ae: 0,
@@ -42,25 +42,17 @@ export default function Drilling() {
 
   // change data input and coef Ap Ae for HSS
   useEffect(() => {
-    if (contextTypeTools === "toolhss") {
-      // change "d" for DB
-      if (contextInput.d != 0) {
+    if (contextInput.d) {
+      if (contextTypeTools === "toolhss") {
+        let valCoefAp;
+        let valCoefAe;
+        // change "d" for DB
         if (contextInput.d >= 2 && contextInput.d <= 28) {
           setValueDiameterForDB(contextInput.d.toFixed(0));
-        } else if (contextInput.d < 2) {
-          setValueDiameterForDB(2);
         } else if (contextInput.d > 28) {
           setValueDiameterForDB(28);
           alert("Max diameter 28");
         }
-      }
-      // coef Ap Ae
-      if (
-        contextTypeProces === "roughing" ||
-        contextTypeProces === "finishing"
-      ) {
-        let valCoefAp;
-        let valCoefAe;
         //coef ap
         if (contextInput.ap <= contextInput.d) valCoefAp = 1;
         if (
@@ -87,99 +79,97 @@ export default function Drilling() {
           ap: valCoefAp,
           ae: valCoefAe,
         });
-      }
-      if (contextTypeTools === "toolcarbide") {
+      } else if (contextTypeTools === "toolcarbide") {
         if (contextInput.d >= 1 && contextInput.d <= 20) {
           setValueDiameterForDB(contextInput.d.toFixed(0));
         } else if (contextInput.d > 20) {
           setValueDiameterForDB(20);
           alert("Max diameter 20");
         }
-      }
+      } else setIsInputPlate(false);
     }
   }, [contextInput, contextTypeTools]);
   // 'fetch'
   useEffect(() => {
-    let data_Vc_HSS;
-    let data_f_HSS;
-    let z_mmOb;
-    // change input for different tools
-    if (contextTypeTools !== "toolfolding") {
-      setIsInputPlate(true);
-    } else setIsInputPlate(false);
-
-    // Data from database
-    if (contextTypeTools !== "toolfolding") {
-      // --HSS--
-      if (contextTypeTools === "toolhss" && valueDiameterForDB != 0) {
-        // Data from database for ----"roughing"----
-        if (contextTypeProces === "roughing") {
+    if (contextInput.d) {
+      let dataVC = 0;
+      let dataF = 0;
+      let f_mmob;
+      // Data from database
+      if (contextTypeTools !== "toolfolding") {
+        // change input for different tools
+        setIsInputPlate(true);
+        // --HSS--
+        if (contextTypeTools === "toolhss") {
+          // Data from database for ----"roughing"----
+          if (contextTypeProces === "roughing") {
+            // Vc_min + Vc_max
+            dataVC = db_vc_milling_rough.find(
+              (item) => item.material === `${contextTypeMaterial}`
+            );
+            // "f"
+            dataF = db_f_mill_toolhssrough.find(
+              (item) => item.diametr === `${valueDiameterForDB}`
+            );
+            // Data from database for ----"finishing"
+          } else if (contextTypeProces === "finishing") {
+            // Vc_min + Vc_max
+            dataVC = db_vc_milling.find(
+              (item) => item.material === `${contextTypeMaterial}`
+            );
+            // "f"
+            dataF = db_f_mill_toolhssfinishing.find(
+              (item) => item.diametr === `${valueDiameterForDB}`
+            );
+          }
+        }
+        // --VHM--
+        if (contextTypeTools === "toolcarbide") {
           // Vc_min + Vc_max
-          data_Vc_HSS = db_vc_milling_rough.find(
+          dataVC = db_vc_milling.find(
             (item) => item.material === `${contextTypeMaterial}`
           );
           // "f"
-          data_f_HSS = db_f_mill_toolhssrough.find(
-            (item) => item.diametr === `${valueDiameterForDB}`
-          );
-          // Data from database for ----"finishing"
-        } else if (contextTypeProces === "finishing") {
-          // Vc_min + Vc_max
-          data_Vc_HSS = db_vc_milling.find(
-            (item) => item.material === `${contextTypeMaterial}`
-          );
-          // "f"
-          data_f_HSS = db_f_mill_toolhssfinishing.find(
+          dataF = db_f_mill_toolcarbidemain.find(
             (item) => item.diametr === `${valueDiameterForDB}`
           );
         }
-      }
-      // --VHM--
-      if (contextTypeTools === "toolcarbide") {
-        // Vc_min + Vc_max
-        data_Vc_HSS = db_vc_milling.find(
-          (item) => item.material === `${contextTypeMaterial}`
+        if (dataF) {
+          f_mmob = (dataF[contextTypeMaterial] * contextInput.z).toFixed(2);
+        } else {
+          console.warn("dataF is unavailable for the provided inputs");
+        }
+        setContextCatalog({
+          Vcmin: dataVC ? dataVC[contextTypeTools] : 0,
+          Vcmax: dataVC ? dataVC[`${contextTypeTools}Max`] : 0,
+          f: f_mmob,
+        });
+      } else if (contextTypeTools === "toolfolding") {
+        setIsInputPlate(false);
+        const dataPlate = db_milling_plates.find(
+          (item) =>
+            item.name === `${contextTypePlate}` &&
+            item.material === `${contextTypeMaterial}`
         );
-        // "f"
-        data_f_HSS = db_f_mill_toolcarbidemain.find(
-          (item) => item.diametr === `${valueDiameterForDB}`
-        );
+        f_mmob = (dataPlate.f_Max * contextInput.z).toFixed(2);
+        setContextCatalogPlate({
+          name: dataPlate.name,
+          website: dataPlate.website,
+          material: dataPlate.material,
+          hardness: dataPlate.hardness,
+          ap_Min: dataPlate.ap_Min,
+          ap_Max: dataPlate.ap_Max,
+          f_Min: dataPlate.f_Min,
+          f_Max: dataPlate.f_Max,
+          vc_Min: dataPlate.vc_Min,
+          vc_Max: dataPlate.vc_Max,
+          f: f_mmob,
+        });
       }
-      z_mmOb = data_f_HSS
-        ? (data_f_HSS[contextTypeMaterial] * contextInput.z).toFixed(2)
-        : 0;
-      setContextCatalog({
-        Vcmin: data_Vc_HSS[contextTypeTools],
-        Vcmax: data_Vc_HSS[`${contextTypeTools}Max`],
-        f: z_mmOb,
-      });
-    }
-    // Data from database for tools --Plate--
-    if (contextTypeTools === "toolfolding") {
-      const dataPlate = db_milling_plates.find(
-        (item) =>
-          item.name === `${contextTypePlate}` &&
-          item.material === `${contextTypeMaterial}`
-      );
-      let f_mmob = (dataPlate.f_Max * contextInput.z).toFixed(2);
-      setContextCatalogPlate({
-        name: dataPlate.name,
-        website: dataPlate.website,
-        material: dataPlate.material,
-        hardness: dataPlate.hardness,
-        ap_Min: dataPlate.ap_Min,
-        ap_Max: dataPlate.ap_Max,
-        f_Min: dataPlate.f_Min,
-        f_Max: dataPlate.f_Max,
-        vc_Min: dataPlate.vc_Min,
-        vc_Max: dataPlate.vc_Max,
-        f: f_mmob,
-      });
     }
   }, [
     contextTypeTools,
     contextTypeMaterial,
-    valueDiameterForDB,
     contextTypeProces,
     contextTypePlate,
   ]);
@@ -189,46 +179,51 @@ export default function Drilling() {
     let Smax = 0;
     let Fmin = 0;
     let Fmax = 0;
+    if (contextCatalog.Vcmin) {
+      if (contextTypeTools !== "toolfolding") {
+        Smin = Math.floor(
+          (contextCatalog.Vcmin * 1000) / (Math.PI * contextInput.d)
+        );
+        Smax = Math.floor(
+          (contextCatalog.Vcmax * 1000) / (Math.PI * contextInput.d)
+        );
 
-    if (
-      contextTypeTools !== "toolfolding" &&
-      contextCatalog.Vcmin &&
-      contextCatalog.Vcmax
-    ) {
-      Smin = Math.floor(
-        (contextCatalog.Vcmin * 1000) / (Math.PI * contextInput.d)
-      );
-      Smax = Math.floor(
-        (contextCatalog.Vcmax * 1000) / (Math.PI * contextInput.d)
-      );
-
-      if (contextTypeTools === "toolhss" && contextInput.d <= 28) {
-        Fmin = Math.floor(Smin * contextCatalog.f * coefApAe.ap * coefApAe.ae);
-        Fmax = Math.floor(Smax * contextCatalog.f * coefApAe.ap * coefApAe.ae);
-      } else if (contextTypeTools === "toolcarbide" && contextInput.d <= 20) {
-        Fmin = Math.floor(Smin * contextCatalog.f);
-        Fmax = Math.floor(Smax * contextCatalog.f);
+        if (contextTypeTools === "toolhss" && contextInput.d <= 28) {
+          Fmin = Math.floor(
+            Smin * contextCatalog.f * coefApAe.ap * coefApAe.ae
+          );
+          Fmax = Math.floor(
+            Smax * contextCatalog.f * coefApAe.ap * coefApAe.ae
+          );
+        } else if (contextTypeTools === "toolcarbide" && contextInput.d <= 20) {
+          Fmin = Math.floor(Smin * contextCatalog.f);
+          Fmax = Math.floor(Smax * contextCatalog.f);
+        }
+      } else if (contextTypeTools === "toolfolding") {
+        Smin = Math.floor(
+          (contextCatalogPlate.vc_Min * 1000) / (Math.PI * contextInput.d)
+        );
+        Smax = Math.floor(
+          (contextCatalogPlate.vc_Max * 1000) / (Math.PI * contextInput.d)
+        );
+        Fmin = Math.floor(Smin * contextCatalogPlate.f_Min * contextInput.z);
+        Fmax = Math.floor(Smax * contextCatalogPlate.f_Max * contextInput.z);
       }
-    } else if (contextTypeTools === "toolfolding") {
-      Smin = Math.floor(
-        (contextCatalogPlate.vc_Min * 1000) / (Math.PI * contextInput.d)
-      );
-      Smax = Math.floor(
-        (contextCatalogPlate.vc_Max * 1000) / (Math.PI * contextInput.d)
-      );
-      Fmin = Math.floor(Smin * contextCatalogPlate.f_Min * contextInput.z);
-      Fmax = Math.floor(Smax * contextCatalogPlate.f_Max * contextInput.z);
     }
-
     setContextResult({ Smin, Smax, Fmin, Fmax });
-  }, [contextCatalog, contextInput, coefApAe, contextCatalogPlate]);
+  }, [
+    contextCatalog,
+    contextInput,
+    coefApAe,
+    contextCatalogPlate,
+    contextTypeMaterial,
+  ]);
   return (
     <ScrollView contentContainerStyle={gStyle.scrollContainer}>
       <SafeAreaView style={gStyle.main}>
         <TypeProcess />
         <InputForm />
-        {contextInput.d !== 0 &&
-        (contextInput.Vc !== 0 || contextInput.f !== 0) ? (
+        {contextInput.d && (contextInput.Vc || contextInput.f) ? (
           <CalkOwnerParameters />
         ) : null}
         <TypeToolsImg />
