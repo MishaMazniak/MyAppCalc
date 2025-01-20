@@ -18,6 +18,7 @@ export const DataProvider = ({ children }) => {
     ae: 0,
     D: 0,
     L: 0,
+    fz: 0,
   });
   const [contextCatalog, setContextCatalog] = useState({
     Vcmin: 0,

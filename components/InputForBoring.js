@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, TextInput, Text, SafeAreaView, View } from "react-native";
 import { gStyle } from "../styles/styles";
+import { DataContext } from "../ContextAPI/DataContext";
 
-export default function InputForBoring({ placeholderData, setValueFromInput }) {
+export default function InputForBoring({ setValueFromInput }) {
+  const { contextInput } = useContext(DataContext);
+  const { contextCatalogBoring } = useContext(DataContext);
   return (
     <SafeAreaView>
       <View style={gStyle.inputGroup}>
@@ -13,7 +16,7 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           onChangeText={(value) =>
             setValueFromInput("d", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.d}
+          placeholder={contextInput.d ? String(contextInput.d) : undefined}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -25,7 +28,6 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           onChangeText={(value) =>
             setValueFromInput("D", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.z}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -37,7 +39,6 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           onChangeText={(value) =>
             setValueFromInput("L", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.Vcmin}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -49,7 +50,9 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           onChangeText={(value) =>
             setValueFromInput("Vc", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.f}
+          placeholder={
+            contextInput.d ? String(contextCatalogBoring.vc_Min) : undefined
+          }
         />
         <Text style={gStyle.inputText}>m/min</Text>
       </View>
@@ -61,7 +64,9 @@ export default function InputForBoring({ placeholderData, setValueFromInput }) {
           onChangeText={(value) =>
             setValueFromInput("f", Math.abs(parseFloat(value)))
           }
-          placeholder={placeholderData.ap}
+          placeholder={
+            contextInput.d ? String(contextCatalogBoring.f_Min) : undefined
+          }
         />
         <Text style={gStyle.inputText}>mm/ob</Text>
       </View>

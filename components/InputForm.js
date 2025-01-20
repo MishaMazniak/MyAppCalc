@@ -12,19 +12,8 @@ export default function InputForm() {
   const { namePage } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
   const { contextInput } = useContext(DataContext);
-  const { contextCatalog } = useContext(DataContext);
   const { contextTypeTools } = useContext(DataContext);
 
-  const [placeholderData, setPlaceholderData] = useState({
-    d: "",
-    D: "",
-    L: "",
-    Vcmin: "",
-    f: "",
-    z: "",
-    ap: "",
-    ae: "",
-  });
   const [infoAboutCatalog, setInfoAboutCatalog] = useState({
     name: "",
     value: "",
@@ -36,56 +25,43 @@ export default function InputForm() {
         ...prevState,
         [name]: value,
       };
-      if (!updatedState.z || isNaN(updatedState.z)) {
+      if (!updatedState.z) {
         updatedState.z = 2;
       }
       return updatedState;
     });
   };
-  // data from placeholder
   useEffect(() => {
     let name = "";
     let value = "";
-    if (namePage === "Drilling") {
-      if (contextInput.d) {
+    if (contextInput.d) {
+      if (namePage === "Drilling") {
         if (contextTypeTools === "toolcarbide") {
           if (contextInput.d > 20) {
             (name = "VHM"), (value = "1 - 20");
           } else name = "";
         } else if (contextTypeTools === "toolfolding") {
-          if (contextInput.d < 8 || contextInput.d > 36) {
+          if (contextInput.d < 8 || contextInput.d > 35) {
             (name = "Plate"), (value = "8 - 35");
+          } else name = "";
+        }
+      } else if (namePage === "Milling") {
+        if (contextTypeTools === "toolhss") {
+          if (contextInput.d > 28) {
+            (name = "HSS"), (value = "2 - 28");
+          } else name = "";
+        } else if (contextTypeTools === "toolcarbide") {
+          if (contextInput.d > 20) {
+            (name = "VHM"), (value = "1 - 20");
           } else name = "";
         }
       }
     }
-    const checkCatalog_isNaN = Object.entries(contextCatalog).reduce(
-      (acc, [key, value]) => {
-        acc[key] = isNaN(value) ? "0" : String(value);
-        return acc;
-      },
-      {}
-    );
-    const checkInput_isNaN = Object.entries(contextInput).reduce(
-      (acc, [key, value]) => {
-        acc[key] = isNaN(value) ? "0" : String(value);
-        return acc;
-      },
-      {}
-    );
-    setPlaceholderData((prev) => ({
-      ...prev,
-      ...checkCatalog_isNaN,
-      ...checkInput_isNaN,
-      ap: String(contextInput.d),
-      ae: String(contextInput.d * 0.1),
-      f: String(contextCatalog.f),
-    }));
     setInfoAboutCatalog({
       name: name,
       value: value,
     });
-  }, [contextInput, contextCatalog, contextTypeTools]);
+  }, [contextInput, contextTypeTools]);
   return (
     <View style={gStyle.main}>
       {infoAboutCatalog.name && (
@@ -102,25 +78,13 @@ export default function InputForm() {
       )}
 
       {namePage === "Drilling" ? (
-        <InputForDrilling
-          placeholderData={placeholderData}
-          setValueFromInput={setValueFromInput}
-        />
+        <InputForDrilling setValueFromInput={setValueFromInput} />
       ) : namePage === "Milling" && contextTypeTools !== "toolfolding" ? (
-        <InputForMilling
-          placeholderData={placeholderData}
-          setValueFromInput={setValueFromInput}
-        />
+        <InputForMilling setValueFromInput={setValueFromInput} />
       ) : namePage === "Milling" && contextTypeTools === "toolfolding" ? (
-        <InputForMillingPlate
-          placeholderData={placeholderData}
-          setValueFromInput={setValueFromInput}
-        />
+        <InputForMillingPlate setValueFromInput={setValueFromInput} />
       ) : namePage === "Boring" ? (
-        <InputForBoring
-          placeholderData={placeholderData}
-          setValueFromInput={setValueFromInput}
-        />
+        <InputForBoring setValueFromInput={setValueFromInput} />
       ) : (
         NaN
       )}

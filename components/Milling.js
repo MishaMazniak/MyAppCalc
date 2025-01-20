@@ -51,7 +51,6 @@ export default function Drilling() {
           setValueDiameterForDB(contextInput.d.toFixed(0));
         } else if (contextInput.d > 28) {
           setValueDiameterForDB(28);
-          alert("Max diameter 28");
         }
         //coef ap
         if (contextInput.ap <= contextInput.d) valCoefAp = 1;
@@ -84,19 +83,18 @@ export default function Drilling() {
           setValueDiameterForDB(contextInput.d.toFixed(0));
         } else if (contextInput.d > 20) {
           setValueDiameterForDB(20);
-          alert("Max diameter 20");
         }
       } else setIsInputPlate(false);
     }
   }, [contextInput, contextTypeTools]);
   // 'fetch'
   useEffect(() => {
-    if (contextInput.d) {
-      let dataVC = 0;
-      let dataF = 0;
-      let f_mmob;
-      // Data from database
-      if (contextTypeTools !== "toolfolding") {
+    let dataVC = 0;
+    let dataF = 0;
+    let f_mmob;
+    // Data from database
+    if (contextTypeTools !== "toolfolding") {
+      if (contextInput.d && valueDiameterForDB > 0) {
         // change input for different tools
         setIsInputPlate(true);
         // --HSS--
@@ -136,42 +134,44 @@ export default function Drilling() {
         }
         if (dataF) {
           f_mmob = (dataF[contextTypeMaterial] * contextInput.z).toFixed(2);
-        } else {
-          console.warn("dataF is unavailable for the provided inputs");
+          console.warn(dataF);
+          console.warn(f_mmob);
         }
         setContextCatalog({
           Vcmin: dataVC ? dataVC[contextTypeTools] : 0,
           Vcmax: dataVC ? dataVC[`${contextTypeTools}Max`] : 0,
           f: f_mmob,
         });
-      } else if (contextTypeTools === "toolfolding") {
-        setIsInputPlate(false);
-        const dataPlate = db_milling_plates.find(
-          (item) =>
-            item.name === `${contextTypePlate}` &&
-            item.material === `${contextTypeMaterial}`
-        );
-        f_mmob = (dataPlate.f_Max * contextInput.z).toFixed(2);
-        setContextCatalogPlate({
-          name: dataPlate.name,
-          website: dataPlate.website,
-          material: dataPlate.material,
-          hardness: dataPlate.hardness,
-          ap_Min: dataPlate.ap_Min,
-          ap_Max: dataPlate.ap_Max,
-          f_Min: dataPlate.f_Min,
-          f_Max: dataPlate.f_Max,
-          vc_Min: dataPlate.vc_Min,
-          vc_Max: dataPlate.vc_Max,
-          f: f_mmob,
-        });
       }
+    } else if (contextTypeTools === "toolfolding") {
+      setIsInputPlate(false);
+      const dataPlate = db_milling_plates.find(
+        (item) =>
+          item.name === `${contextTypePlate}` &&
+          item.material === `${contextTypeMaterial}`
+      );
+      f_mmob = (dataPlate.f_Min * contextInput.z).toFixed(2);
+      setContextCatalogPlate({
+        name: dataPlate.name,
+        website: dataPlate.website,
+        material: dataPlate.material,
+        hardness: dataPlate.hardness,
+        ap_Min: dataPlate.ap_Min,
+        ap_Max: dataPlate.ap_Max,
+        f_Min: dataPlate.f_Min,
+        f_Max: dataPlate.f_Max,
+        vc_Min: dataPlate.vc_Min,
+        vc_Max: dataPlate.vc_Max,
+        f: f_mmob,
+      });
     }
   }, [
     contextTypeTools,
     contextTypeMaterial,
     contextTypeProces,
     contextTypePlate,
+    valueDiameterForDB,
+    contextInput,
   ]);
   // show resoult
   useEffect(() => {
@@ -187,6 +187,8 @@ export default function Drilling() {
         Smax = Math.floor(
           (contextCatalog.Vcmax * 1000) / (Math.PI * contextInput.d)
         );
+        Fmin = Math.floor(Smin * contextCatalog.f * coefApAe.ap * coefApAe.ae);
+        Fmax = Math.floor(Smax * contextCatalog.f * coefApAe.ap * coefApAe.ae);
 
         if (contextTypeTools === "toolhss" && contextInput.d <= 28) {
           Fmin = Math.floor(

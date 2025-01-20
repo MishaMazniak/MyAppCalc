@@ -3,11 +3,9 @@ import { StyleSheet, TextInput, Text, SafeAreaView, View } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
 
-export default function InputForDrilling({
-  placeholderData,
-  setValueFromInput,
-}) {
+export default function InputForDrilling({ setValueFromInput }) {
   const { contextInput } = useContext(DataContext);
+  const { contextCatalog } = useContext(DataContext);
   return (
     <SafeAreaView>
       <View style={gStyle.inputGroup}>
@@ -18,6 +16,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("d", Math.abs(parseFloat(value)))
           }
+          placeholder={contextInput.d ? String(contextInput.d) : undefined}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -29,7 +28,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("z", Math.abs(parseFloat(value)))
           }
-          placeholder={contextInput.d ? placeholderData.z : undefined}
+          placeholder={contextInput.d ? String(contextInput.z) : undefined}
         />
         <Text style={gStyle.inputText}>szt</Text>
       </View>
@@ -41,7 +40,9 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("Vc", Math.abs(parseFloat(value)))
           }
-          placeholder={contextInput.d ? placeholderData.Vcmin : undefined}
+          placeholder={
+            contextInput.d ? String(contextCatalog.Vcmin) : undefined
+          }
         />
         <Text style={gStyle.inputText}>m/min</Text>
       </View>
@@ -53,7 +54,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("f", Math.abs(parseFloat(value)))
           }
-          placeholder={contextInput.d ? placeholderData.f : undefined}
+          placeholder={contextInput.d ? String(contextCatalog.f) : undefined}
         />
         <Text style={gStyle.inputText}>mm/ob</Text>
       </View>
@@ -65,7 +66,7 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("ap", Math.abs(parseFloat(value)))
           }
-          placeholder={contextInput.d ? placeholderData.ap : undefined}
+          placeholder={contextInput.d ? String(contextInput.d) : undefined}
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>
@@ -77,7 +78,11 @@ export default function InputForDrilling({
           onChangeText={(value) =>
             setValueFromInput("ae", Math.abs(parseFloat(value)))
           }
-          placeholder={contextInput.d ? placeholderData.ae : undefined}
+          placeholder={
+            contextInput.d
+              ? String((contextInput.d * 0.1).toFixed(1))
+              : undefined
+          }
         />
         <Text style={gStyle.inputText}>mm</Text>
       </View>

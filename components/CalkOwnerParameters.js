@@ -20,6 +20,9 @@ export default function CalkOwnerParameters() {
     if (namePage === "Drilling" || namePage === "Boring") {
       f = Math.floor(s * contextInput.f);
     }
+    if (namePage === "Milling" && contextTypeTools !== "toolfolding") {
+      f = Math.floor(s * contextInput.f * contextInput.z);
+    }
     if (namePage === "Milling" && contextTypeTools === "toolfolding") {
       f = Math.floor(s * contextInput.fz * contextInput.z);
     }
