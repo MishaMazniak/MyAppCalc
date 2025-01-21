@@ -84,16 +84,18 @@ export default function Drilling() {
         } else if (contextInput.d > 20) {
           setValueDiameterForDB(20);
         }
-      } else setIsInputPlate(false);
+      }
+      setIsInputPlate(false);
     }
   }, [contextInput, contextTypeTools]);
   // 'fetch'
   useEffect(() => {
     let dataVC = 0;
     let dataF = 0;
-    let f_mmob;
+    let f_mm_z;
     // Data from database
     if (contextTypeTools !== "toolfolding") {
+      setIsInputPlate(true);
       if (contextInput.d && valueDiameterForDB > 0) {
         // change input for different tools
         setIsInputPlate(true);
@@ -133,14 +135,12 @@ export default function Drilling() {
           );
         }
         if (dataF) {
-          f_mmob = (dataF[contextTypeMaterial] * contextInput.z).toFixed(2);
-          console.warn(dataF);
-          console.warn(f_mmob);
+          f_mm_z = dataF[contextTypeMaterial];
         }
         setContextCatalog({
           Vcmin: dataVC ? dataVC[contextTypeTools] : 0,
           Vcmax: dataVC ? dataVC[`${contextTypeTools}Max`] : 0,
-          f: f_mmob,
+          f: f_mm_z,
         });
       }
     } else if (contextTypeTools === "toolfolding") {
@@ -150,7 +150,7 @@ export default function Drilling() {
           item.name === `${contextTypePlate}` &&
           item.material === `${contextTypeMaterial}`
       );
-      f_mmob = (dataPlate.f_Min * contextInput.z).toFixed(2);
+
       setContextCatalogPlate({
         name: dataPlate.name,
         website: dataPlate.website,
@@ -162,7 +162,6 @@ export default function Drilling() {
         f_Max: dataPlate.f_Max,
         vc_Min: dataPlate.vc_Min,
         vc_Max: dataPlate.vc_Max,
-        f: f_mmob,
       });
     }
   }, [
@@ -187,19 +186,16 @@ export default function Drilling() {
         Smax = Math.floor(
           (contextCatalog.Vcmax * 1000) / (Math.PI * contextInput.d)
         );
-        Fmin = Math.floor(Smin * contextCatalog.f * coefApAe.ap * coefApAe.ae);
-        Fmax = Math.floor(Smax * contextCatalog.f * coefApAe.ap * coefApAe.ae);
-
         if (contextTypeTools === "toolhss" && contextInput.d <= 28) {
           Fmin = Math.floor(
-            Smin * contextCatalog.f * coefApAe.ap * coefApAe.ae
+            Smin * contextCatalog.f * contextInput.z * coefApAe.ap * coefApAe.ae
           );
           Fmax = Math.floor(
-            Smax * contextCatalog.f * coefApAe.ap * coefApAe.ae
+            Smax * contextCatalog.f * contextInput.z * coefApAe.ap * coefApAe.ae
           );
         } else if (contextTypeTools === "toolcarbide" && contextInput.d <= 20) {
-          Fmin = Math.floor(Smin * contextCatalog.f);
-          Fmax = Math.floor(Smax * contextCatalog.f);
+          Fmin = Math.floor(Smin * contextCatalog.f * contextInput.z);
+          Fmax = Math.floor(Smax * contextCatalog.f * contextInput.z);
         }
       } else if (contextTypeTools === "toolfolding") {
         Smin = Math.floor(

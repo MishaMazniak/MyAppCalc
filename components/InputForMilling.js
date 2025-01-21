@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { StyleSheet, TextInput, Text, SafeAreaView, View } from "react-native";
 import { gStyle } from "../styles/styles";
+import InputForMillingHss from "../components/InputForMillingHss";
 import { DataContext } from "../ContextAPI/DataContext";
 
-export default function InputForDrilling({ setValueFromInput }) {
+export default function InputForMilling({ setValueFromInput }) {
   const { contextInput } = useContext(DataContext);
   const { contextCatalog } = useContext(DataContext);
+  const { contextTypeTools } = useContext(DataContext);
+  const { contextCatalogPlate } = useContext(DataContext);
   return (
     <SafeAreaView>
       <View style={gStyle.inputGroup}>
@@ -41,51 +44,35 @@ export default function InputForDrilling({ setValueFromInput }) {
             setValueFromInput("Vc", Math.abs(parseFloat(value)))
           }
           placeholder={
-            contextInput.d ? String(contextCatalog.Vcmin) : undefined
+            contextInput.d && contextTypeTools !== "toolfolding"
+              ? String(contextCatalog.Vcmin)
+              : contextInput.d && contextTypeTools === "toolfolding"
+              ? String(contextCatalogPlate.vc_Min)
+              : undefined
           }
         />
         <Text style={gStyle.inputText}>m/min</Text>
       </View>
       <View style={gStyle.inputGroup}>
-        <Text style={gStyle.inputText}>f</Text>
+        <Text style={gStyle.inputText}>fz</Text>
         <TextInput
           style={gStyle.input}
           keyboardType="decimal-pad"
           onChangeText={(value) =>
-            setValueFromInput("f", Math.abs(parseFloat(value)))
-          }
-          placeholder={contextInput.d ? String(contextCatalog.f) : undefined}
-        />
-        <Text style={gStyle.inputText}>mm/ob</Text>
-      </View>
-      <View style={gStyle.inputGroup}>
-        <Text style={gStyle.inputText}>ap</Text>
-        <TextInput
-          style={gStyle.input}
-          keyboardType="numeric"
-          onChangeText={(value) =>
-            setValueFromInput("ap", Math.abs(parseFloat(value)))
-          }
-          placeholder={contextInput.d ? String(contextInput.d) : undefined}
-        />
-        <Text style={gStyle.inputText}>mm</Text>
-      </View>
-      <View style={gStyle.inputGroup}>
-        <Text style={gStyle.inputText}>ae</Text>
-        <TextInput
-          style={gStyle.input}
-          keyboardType="numeric"
-          onChangeText={(value) =>
-            setValueFromInput("ae", Math.abs(parseFloat(value)))
+            setValueFromInput("fz", Math.abs(parseFloat(value)))
           }
           placeholder={
-            contextInput.d
-              ? String((contextInput.d * 0.1).toFixed(1))
+            contextInput.d && contextTypeTools !== "toolfolding"
+              ? String(contextCatalog.f)
+              : contextInput.d && contextTypeTools === "toolfolding"
+              ? String(contextCatalogPlate.f_Min)
               : undefined
           }
         />
-        <Text style={gStyle.inputText}>mm</Text>
+        <Text style={gStyle.inputText}>mm/z</Text>
       </View>
+
+      {contextTypeTools === "toolhss" && <InputForMillingHss />}
     </SafeAreaView>
   );
 }

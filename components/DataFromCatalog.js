@@ -11,7 +11,7 @@ export default function DataFromCatalog() {
       <Text style={gStyle.text}>
         Vc = {contextCatalog.Vcmin} - {contextCatalog.Vcmax} m/min
       </Text>
-      <Text style={gStyle.text}>f = {contextCatalog.f} mm/ob</Text>
+      <Text style={gStyle.text}>f = {contextCatalog.f} mm/z</Text>
       <View style={gStyle.underLine}></View>
     </View>
   );

@@ -6,7 +6,6 @@ import { DataContext } from "../ContextAPI/DataContext";
 export default function CalkOwnerParameters() {
   const { namePage } = useContext(DataContext);
   const { contextInput } = useContext(DataContext);
-  const { contextTypeTools } = useContext(DataContext);
 
   const [resultOwner, setResultOwner] = useState({
     s: 0,
@@ -20,10 +19,7 @@ export default function CalkOwnerParameters() {
     if (namePage === "Drilling" || namePage === "Boring") {
       f = Math.floor(s * contextInput.f);
     }
-    if (namePage === "Milling" && contextTypeTools !== "toolfolding") {
-      f = Math.floor(s * contextInput.f * contextInput.z);
-    }
-    if (namePage === "Milling" && contextTypeTools === "toolfolding") {
+    if (namePage === "Milling") {
       f = Math.floor(s * contextInput.fz * contextInput.z);
     }
     s = isNaN(s) ? 0 : s;

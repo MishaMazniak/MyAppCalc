@@ -23,7 +23,6 @@ export default function DataFromCatalogPlate() {
       <Text style={gStyle.text}>
         Vc = {contextCatalogPlate.vc_Min} - {contextCatalogPlate.vc_Max} m/min
       </Text>
-      <Text style={gStyle.text}>f = {contextCatalogPlate.f} mm/ob</Text>
       <Text style={gStyle.text}>
         fz = {contextCatalogPlate.f_Min} - {contextCatalogPlate.f_Max} mm/z
       </Text>

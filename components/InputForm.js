@@ -6,7 +6,6 @@ import { DataContext } from "../ContextAPI/DataContext";
 import InputForDrilling from "./InputForDrilling";
 import InputForMilling from "./InputForMilling";
 import InputForBoring from "./InputForBoring";
-import InputForMillingPlate from "./InputForMillingPlate";
 
 export default function InputForm() {
   const { namePage } = useContext(DataContext);
@@ -79,10 +78,8 @@ export default function InputForm() {
 
       {namePage === "Drilling" ? (
         <InputForDrilling setValueFromInput={setValueFromInput} />
-      ) : namePage === "Milling" && contextTypeTools !== "toolfolding" ? (
+      ) : namePage === "Milling" ? (
         <InputForMilling setValueFromInput={setValueFromInput} />
-      ) : namePage === "Milling" && contextTypeTools === "toolfolding" ? (
-        <InputForMillingPlate setValueFromInput={setValueFromInput} />
       ) : namePage === "Boring" ? (
         <InputForBoring setValueFromInput={setValueFromInput} />
       ) : (
