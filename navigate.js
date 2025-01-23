@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Drilling from "./components/Drilling";
 import Milling from "./components/Milling";
 import Boring from "./components/Boring";
+import Tolerance from "./components/Tolerance";
 import MainScreen from "./components/MainScreen";
 
 const Stack = createStackNavigator();
@@ -42,6 +43,14 @@ export default function Navigate() {
           component={Boring}
           options={{
             title: "Boring",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="Tolerance"
+          component={Tolerance}
+          options={{
+            title: "Tolerance",
             headerTitleAlign: "center",
           }}
         />
