@@ -11,26 +11,70 @@ import {
 import { gStyle } from "../styles/styles";
 
 export default function Tolerance() {
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
-  const [dataInput, setDataInput] = useState({
-    type: "Hole",
+  const [isAccordionOpen, setIsAccordionOpen] = useState({
+    holeShaft: false,
+    type: false,
+    tolerance: false,
   });
-  const toggleAccordion = () => {
-    setIsAccordionOpen(!isAccordionOpen);
+  const [dataInput, setDataInput] = useState({
+    holeShaft: "Hole",
+    type: "H",
+    tolerance: "6",
+    d: "",
+  });
+  const toggleAccordion = (name) => {
+    setIsAccordionOpen((prevState) => ({
+      ...prevState,
+      [name]: !isAccordionOpen[name],
+    }));
   };
   const getDataInput = (name, value) => {
     setDataInput((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    toggleAccordion();
+    if (name === "holeShaft") {
+      toggleAccordion("holeShaft");
+    } else if (name === "type") {
+      toggleAccordion("type");
+    } else if (name === "tolerance") {
+      toggleAccordion("tolerance");
+    }
   };
 
   return (
     <SafeAreaView style={gStyle.main}>
-      <View style={styles.inputGroup}>
+      <View style={[styles.wrapInput]}>
         <Text style={[styles.titleInput, styles.text]}>Hole/Shaft:</Text>
-        <TouchableOpacity onPress={toggleAccordion} style={styles.boxAcordeon}>
+        <TouchableOpacity
+          onPress={() => toggleAccordion("holeShaft")}
+          style={styles.boxAcordeon}
+        >
+          <Text style={[styles.chooseOpcion, styles.text]}>
+            {dataInput.holeShaft}
+          </Text>
+          <Text style={[styles.arrowAcordeon, styles.text]}>
+            {isAccordionOpen ? "\u25B2" : "\u25BC"}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={[styles.wrapInput, styles.wrapDiameter]}>
+        <Text style={[styles.titleInput, styles.text]}>Diameter:</Text>
+        <TextInput
+          style={[styles.input, styles.text]}
+          keyboardType="numeric"
+          onChangeText={(value) =>
+            getDataInput("d", Math.abs(parseFloat(value)))
+          }
+        />
+        <Text style={[styles.units, styles.text]}>mm</Text>
+      </View>
+      <View style={[styles.wrapInput]}>
+        <Text style={[styles.titleInput, styles.text]}>Type:</Text>
+        <TouchableOpacity
+          onPress={() => toggleAccordion("type")}
+          style={styles.boxAcordeon}
+        >
           <Text style={[styles.chooseOpcion, styles.text]}>
             {dataInput.type}
           </Text>
@@ -39,23 +83,61 @@ export default function Tolerance() {
           </Text>
         </TouchableOpacity>
       </View>
-      {isAccordionOpen && (
-        <View style={styles.dropBox}>
-          <TouchableOpacity onPress={() => getDataInput("type", "Hole")}>
+      <View style={[styles.wrapInput]}>
+        <Text style={[styles.titleInput, styles.text]}>Tolerance:</Text>
+        <TouchableOpacity
+          onPress={() => toggleAccordion("tolerance")}
+          style={styles.boxAcordeon}
+        >
+          <Text style={[styles.chooseOpcion, styles.text]}>
+            {dataInput.tolerance}
+          </Text>
+          <Text style={[styles.arrowAcordeon, styles.text]}>
+            {isAccordionOpen ? "\u25B2" : "\u25BC"}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      {isAccordionOpen.holeShaft && (
+        <View style={styles.dropBoxHoleShaft}>
+          <TouchableOpacity onPress={() => getDataInput("holeShaft", "Hole")}>
             <Text
               style={[
                 styles.textBox,
-                dataInput.type === "Hole" ? styles.select : NaN,
+                dataInput.holeShaft === "Hole" ? styles.select : NaN,
               ]}
             >
               Hole
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => getDataInput("type", "Shaft")}>
+          <TouchableOpacity onPress={() => getDataInput("holeShaft", "Shaft")}>
             <Text
               style={[
                 styles.textBox,
-                dataInput.type === "Shaft" ? styles.select : NaN,
+                dataInput.holeShaft === "Shaft" ? styles.select : NaN,
+              ]}
+            >
+              Shaft
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      {isAccordionOpen.type && (
+        <View style={styles.dropBoxType}>
+          <TouchableOpacity onPress={() => getDataInput("holeShaft", "Hole")}>
+            <Text
+              style={[
+                styles.textBox,
+                dataInput.holeShaft === "Hole" ? styles.select : NaN,
+              ]}
+            >
+              Hole
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => getDataInput("holeShaft", "Shaft")}>
+            <Text
+              style={[
+                styles.textBox,
+                dataInput.holeShaft === "Shaft" ? styles.select : NaN,
               ]}
             >
               Shaft
@@ -68,9 +150,9 @@ export default function Tolerance() {
 }
 const styles = StyleSheet.create({
   text: {
-    fontSize: 24,
+    fontSize: 26,
   },
-  inputGroup: {
+  wrapInput: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -80,6 +162,9 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 5,
     backgroundColor: "white",
+  },
+  wrapDiameter: {
+    justifyContent: "flex-start",
   },
   titleInput: {
     width: 150,
@@ -99,12 +184,21 @@ const styles = StyleSheet.create({
     marginLeft: 80,
     paddingLeft: 12,
   },
-  dropBox: {
+  dropBoxHoleShaft: {
     position: "absolute",
     backgroundColor: "white",
     width: "56%",
     right: "5%",
     top: 65,
+    borderRadius: 5,
+    marginTop: 2,
+  },
+  dropBoxType: {
+    position: "absolute",
+    backgroundColor: "white",
+    width: "56%",
+    right: "5%",
+    top: 180,
     borderRadius: 5,
     marginTop: 2,
   },
@@ -114,6 +208,18 @@ const styles = StyleSheet.create({
   },
   select: {
     backgroundColor: "silver",
+    borderRadius: 5,
+  },
+  input: {
+    width: "48%",
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 25,
+  },
+  units: {
+    backgroundColor: "silver",
+    paddingLeft: 7,
+    paddingRight: 8,
     borderRadius: 5,
   },
 });
