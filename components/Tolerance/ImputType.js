@@ -1,0 +1,97 @@
+import React, { useState, useEffect, useContext } from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { DataContext } from "../../ContextAPI/DataContext";
+import { stylesTol } from "../../styles/styleTolerance";
+
+export default function ImputType({ getDataInput }) {
+  const { contextTolerance } = useContext(DataContext);
+
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [selectList, setSelectList] = useState();
+  const [selectOption, setSelectOption] = useState("H");
+  // symbol for holes
+  const holeOptions = [
+    "H",
+    "K",
+    "J",
+    "G",
+    "M",
+    "N",
+    "R",
+    "S",
+    "E",
+    "F",
+    "U",
+    "D",
+    "A",
+    "B",
+  ];
+  // symbol for shaft
+  const shaftOptions = [
+    "h",
+    "k",
+    "j",
+    "g",
+    "m",
+    "n",
+    "r",
+    "s",
+    "e",
+    "f",
+    "u",
+    "d",
+    "a",
+    "b",
+    "p",
+  ];
+  const toggleAccordion = () => {
+    setIsAccordionOpen(!isAccordionOpen);
+  };
+  const getInput = (key, el) => {
+    setSelectOption(el);
+    getDataInput(key, el);
+    setIsAccordionOpen(false);
+  };
+  useEffect(() => {
+    if (contextTolerance.holeShaft === "Hole") {
+      setSelectList(holeOptions);
+    } else {
+      setSelectList(shaftOptions);
+    }
+  }, [contextTolerance]);
+
+  return (
+    <>
+      <View style={[stylesTol.wrapInput]}>
+        <Text style={[stylesTol.titleInput, stylesTol.text]}>Type:</Text>
+        <TouchableOpacity
+          onPress={() => toggleAccordion()}
+          style={stylesTol.boxAcordeon}
+        >
+          <Text style={[stylesTol.chooseOpcion, stylesTol.text]}>
+            {selectOption}
+          </Text>
+          <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
+            {isAccordionOpen ? "\u25B2" : "\u25BC"}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      {isAccordionOpen && (
+        <View style={[stylesTol.dropBox, styles.dropBox]}>
+          {selectList.map((option, index) => (
+            <TouchableOpacity onPress={() => getInput("type", option)}>
+              <Text style={[stylesTol.textBox]} key={index}>
+                {option}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
+    </>
+  );
+}
+const styles = StyleSheet.create({
+  dropBox: {
+    top: 180,
+  },
+});

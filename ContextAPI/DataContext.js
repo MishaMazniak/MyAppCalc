@@ -54,6 +54,12 @@ export const DataProvider = ({ children }) => {
     Fmin: 0,
     Fmax: 0,
   });
+  const [contextTolerance, setContextTolerance] = useState({
+    holeShaft: "",
+    type: "",
+    tolerance: "",
+    d: "",
+  });
 
   return (
     <DataContext.Provider
@@ -78,6 +84,8 @@ export const DataProvider = ({ children }) => {
         setContextTypePlate,
         contextCatalogBoring,
         setContextCatalogBoring,
+        contextTolerance,
+        setContextTolerance,
       }}
     >
       {children}

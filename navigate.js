@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Drilling from "./components/Drilling";
 import Milling from "./components/Milling";
 import Boring from "./components/Boring";
-import Tolerance from "./components/Tolerance";
+import Tolerance from "./components/Tolerance/Tolerance";
 import MainScreen from "./components/MainScreen";
 
 const Stack = createStackNavigator();
