@@ -22,7 +22,7 @@ export default function ImputHoleShaft({ getDataInput }) {
           onPress={() => toggleAccordion()}
           style={stylesTol.boxAcordeon}
         >
-          <Text style={[stylesTol.chooseOpcion, stylesTol.text]}>
+          <Text style={[stylesTol.chooseHoleShaft, stylesTol.text]}>
             {selectOption}
           </Text>
           <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
@@ -68,5 +68,6 @@ export default function ImputHoleShaft({ getDataInput }) {
 const styles = StyleSheet.create({
   dropBox: {
     top: 65,
+    zIndex: 10,
   },
 });

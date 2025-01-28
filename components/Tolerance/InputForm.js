@@ -14,6 +14,7 @@ export default function InputForm() {
     type: "H",
     tolerance: "6",
     d: "",
+    diametrInDB: 0,
   });
   const getDataInput = (name, value) => {
     setDataInput((prevState) => ({
@@ -27,7 +28,9 @@ export default function InputForm() {
       type: dataInput.type,
       tolerance: dataInput.tolerance,
       d: dataInput.d,
+      diametrInDB: dataInput.diametrInDB,
     });
+    // console.log(dataInput);
   }, [dataInput]);
   return (
     <>

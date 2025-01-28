@@ -53,10 +53,11 @@ export default function ImputTolerance({ getDataInput }) {
   useEffect(() => {
     if (toleranceMap[contextTolerance.type]) {
       setSelectList(toleranceMap[contextTolerance.type]);
+      getInput("tolerance", toleranceMap[contextTolerance.type][0]);
     } else {
       setSelectList([]);
     }
-  }, [contextTolerance]);
+  }, [contextTolerance.type]);
   return (
     <>
       <View style={[stylesTol.wrapInput]}>
@@ -76,8 +77,16 @@ export default function ImputTolerance({ getDataInput }) {
       {isAccordionOpen && (
         <View style={[stylesTol.dropBox, styles.dropBox]}>
           {selectList.map((option, index) => (
-            <TouchableOpacity onPress={() => getInput("tolerance", option)}>
-              <Text style={[stylesTol.textBox]} key={index}>
+            <TouchableOpacity
+              onPress={() => getInput("tolerance", option)}
+              key={index}
+            >
+              <Text
+                style={[
+                  stylesTol.textBox,
+                  selectOption === option ? stylesTol.select : NaN,
+                ]}
+              >
                 {option}
               </Text>
             </TouchableOpacity>
@@ -90,5 +99,6 @@ export default function ImputTolerance({ getDataInput }) {
 const styles = StyleSheet.create({
   dropBox: {
     top: 237,
+    zIndex: 10,
   },
 });

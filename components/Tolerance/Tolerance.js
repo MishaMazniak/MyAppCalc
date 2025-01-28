@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { StyleSheet, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView, Image } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
-import InputForm from "./InputForm";
 import { gStyle } from "../../styles/styles";
+
+import InputForm from "./InputForm";
+import Result from "./Result";
 
 export default function Tolerance() {
   const { contextTolerance } = useContext(DataContext);
@@ -14,7 +16,18 @@ export default function Tolerance() {
   return (
     <SafeAreaView style={gStyle.main}>
       <InputForm />
+      <Result />
+      <Image
+        style={styles.imgTable}
+        source={require("../../assets/dopuski-i-posadki5.jpg")}
+      />
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  imgTable: {
+    marginTop: 25,
+    width: "90%",
+    height: 400,
+  },
+});

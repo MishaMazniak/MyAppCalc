@@ -59,6 +59,7 @@ export const DataProvider = ({ children }) => {
     type: "",
     tolerance: "",
     d: "",
+    diametrInDB: 0,
   });
 
   return (

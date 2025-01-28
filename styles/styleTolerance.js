@@ -37,7 +37,10 @@ export const stylesTol = StyleSheet.create({
   },
   chooseOpcion: {
     backgroundColor: "white",
-    paddingRight: 35,
+    paddingRight: 85,
+  },
+  chooseHoleShaft: {
+    paddingRight: 50,
   },
   arrowAcordeon: {
     width: 50,
@@ -57,7 +60,7 @@ export const stylesTol = StyleSheet.create({
     width: "48%",
     paddingTop: 0,
     paddingBottom: 0,
-    paddingLeft: 25,
+    paddingLeft: 20,
   },
   units: {
     backgroundColor: "silver",

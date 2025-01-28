@@ -55,10 +55,12 @@ export default function ImputType({ getDataInput }) {
   useEffect(() => {
     if (contextTolerance.holeShaft === "Hole") {
       setSelectList(holeOptions);
+      getInput("type", "H");
     } else {
       setSelectList(shaftOptions);
+      getInput("type", "h");
     }
-  }, [contextTolerance]);
+  }, [contextTolerance.holeShaft]);
 
   return (
     <>
@@ -79,8 +81,16 @@ export default function ImputType({ getDataInput }) {
       {isAccordionOpen && (
         <View style={[stylesTol.dropBox, styles.dropBox]}>
           {selectList.map((option, index) => (
-            <TouchableOpacity onPress={() => getInput("type", option)}>
-              <Text style={[stylesTol.textBox]} key={index}>
+            <TouchableOpacity
+              onPress={() => getInput("type", option)}
+              key={index}
+            >
+              <Text
+                style={[
+                  stylesTol.textBox,
+                  selectOption === option ? stylesTol.select : NaN,
+                ]}
+              >
                 {option}
               </Text>
             </TouchableOpacity>
@@ -93,5 +103,6 @@ export default function ImputType({ getDataInput }) {
 const styles = StyleSheet.create({
   dropBox: {
     top: 180,
+    zIndex: 10,
   },
 });
