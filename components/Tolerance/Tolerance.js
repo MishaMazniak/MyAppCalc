@@ -1,16 +1,37 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { StyleSheet, SafeAreaView, Image } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
 import { gStyle } from "../../styles/styles";
+
+import db_tolerance from "../../assets/dbTolerance.json";
 
 import InputForm from "./InputForm";
 import Result from "./Result";
 
 export default function Tolerance() {
   const { contextTolerance } = useContext(DataContext);
+  const { setContextToleranceResult } = useContext(DataContext);
 
   useEffect(() => {
-    // console.log(contextTolerance);
+    if (contextTolerance.d) {
+      const nameTable = contextTolerance.type + contextTolerance.tolerance;
+      const dataTolerance = db_tolerance.find(
+        (item) => item.diameter === `${contextTolerance.diametrInDB}`
+      );
+      const toleranceValueMin = dataTolerance ? dataTolerance[nameTable] : null;
+      const toleranceValueMax = dataTolerance
+        ? dataTolerance[nameTable + "_max"]
+        : null;
+
+      const minD = contextTolerance.d + toleranceValueMin / 1000;
+      const maxD = contextTolerance.d + toleranceValueMax / 1000;
+      setContextToleranceResult({
+        minVal: toleranceValueMin / 1000,
+        maxVal: toleranceValueMax / 1000,
+        minD: minD,
+        maxD: maxD,
+      });
+    }
   }, [contextTolerance]);
 
   return (

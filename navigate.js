@@ -7,6 +7,7 @@ import Milling from "./components/Milling";
 import Boring from "./components/Boring";
 import Tolerance from "./components/Tolerance/Tolerance";
 import MainScreen from "./components/MainScreen";
+import Taping from "./components/Taping/Taping";
 
 const Stack = createStackNavigator();
 
@@ -51,6 +52,14 @@ export default function Navigate() {
           component={Tolerance}
           options={{
             title: "Tolerance",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="Taping"
+          component={Taping}
+          options={{
+            title: "Taping",
             headerTitleAlign: "center",
           }}
         />

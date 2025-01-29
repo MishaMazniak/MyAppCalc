@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, TextInput } from "react-native";
 import { stylesTol } from "../../styles/styleTolerance";
+import { DataContext } from "../../ContextAPI/DataContext";
 
 export default function ImputDiameter({ getDataInput }) {
+  const { contextTolerance } = useContext(DataContext);
   const getDiameter = (name, diameter) => {
     let diametrForDB;
     if (diameter) {
@@ -61,6 +63,7 @@ export default function ImputDiameter({ getDataInput }) {
           onChangeText={(value) =>
             getDiameter("d", Math.abs(parseFloat(value)))
           }
+          placeholder={String(contextTolerance.d)}
         />
         <Text style={[stylesTol.units, stylesTol.text]}>mm</Text>
       </View>

@@ -61,6 +61,16 @@ export const DataProvider = ({ children }) => {
     d: "",
     diametrInDB: 0,
   });
+  const [contextToleranceResult, setContextToleranceResult] = useState({
+    minVal: "",
+    maxVal: "",
+    minD: "",
+    maxD: "",
+  });
+  const [contextTaping, setContextTaping] = useState({
+    type: "",
+    size: "",
+  });
 
   return (
     <DataContext.Provider
@@ -87,6 +97,10 @@ export const DataProvider = ({ children }) => {
         setContextCatalogBoring,
         contextTolerance,
         setContextTolerance,
+        contextToleranceResult,
+        setContextToleranceResult,
+        contextTaping,
+        setContextTaping,
       }}
     >
       {children}

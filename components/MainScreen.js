@@ -38,41 +38,6 @@ export default function MainScreen({ navigation }) {
     React.useCallback(() => {
       setContextInput({ d: 0, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
       setContextTypeTools("toolhss");
-      // setContextTypeProces("roughing");
-      // setContextTypePlate("tngx");
-      // setContextTypeMaterial("steel");
-      // setContextCatalog({ Vcmin: 0, Vcmax: 0, f: 0 });
-      // setContextCatalogPlate({
-      //   name: "tngx",
-      //   website: "",
-      //   material: "",
-      //   hardness: "",
-      //   ap_Min: "",
-      //   ap_Max: "",
-      //   f_Min: "",
-      //   f_Max: "",
-      //   vc_Min: "",
-      //   vc_Max: "",
-      //   f: "",
-      // });
-      // setContextCatalogBoring({
-      //   material: "",
-      //   coefficient_L_d: "",
-      //   vc_Min: "",
-      //   vc_Max: "",
-      //   R_plate: "",
-      //   f_Min: "",
-      //   f_Max: "",
-      //   ap_Min: "",
-      //   ap_Max: "",
-      // });
-      // setContextResult({
-      //   Smin: 0,
-      //   Smax: 0,
-      //   Fmin: 0,
-      //   Fmax: 0,
-      // });
-
       return () => {};
     }, [])
   );
@@ -138,7 +103,7 @@ export default function MainScreen({ navigation }) {
           </View>
           <View style={lStyles.boxWrap}>
             <Text style={lStyles.textOverIcon}>Otwór pod gwint</Text>
-            <Pressable onPress={() => startCalc("HoleOnderScrew")}>
+            <Pressable onPress={() => startCalc("Taping")}>
               <Image
                 style={lStyles.imgFromTitle}
                 source={require("../assets/screw.jpeg")}

@@ -13,7 +13,7 @@ export default function InputForm() {
     holeShaft: "Hole",
     type: "H",
     tolerance: "6",
-    d: "",
+    d: 1,
     diametrInDB: 0,
   });
   const getDataInput = (name, value) => {
@@ -30,7 +30,6 @@ export default function InputForm() {
       d: dataInput.d,
       diametrInDB: dataInput.diametrInDB,
     });
-    // console.log(dataInput);
   }, [dataInput]);
   return (
     <>
