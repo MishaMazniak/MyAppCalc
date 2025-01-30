@@ -7,8 +7,8 @@ export default function ImputType({ getDataInput }) {
   const { contextTolerance } = useContext(DataContext);
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
-  const [selectList, setSelectList] = useState();
   const [selectOption, setSelectOption] = useState("H");
+  const [selectList, setSelectList] = useState();
   // symbol for holes
   const holeOptions = [
     "H",

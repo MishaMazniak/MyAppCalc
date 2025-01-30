@@ -68,8 +68,10 @@ export const DataProvider = ({ children }) => {
     maxD: "",
   });
   const [contextTaping, setContextTaping] = useState({
-    type: "",
-    size: "",
+    type: "M",
+    size: "1",
+    d: "",
+    thread: "",
   });
 
   return (

@@ -29,7 +29,7 @@ export const stylesTol = StyleSheet.create({
   titleInput: {
     width: 150,
     paddingLeft: 10,
-    backgroundColor: "silver",
+    backgroundColor: "rgb(245, 241, 241)",
   },
   boxAcordeon: {
     flexDirection: "row",
@@ -53,7 +53,7 @@ export const stylesTol = StyleSheet.create({
     paddingLeft: 32,
   },
   select: {
-    backgroundColor: "silver",
+    backgroundColor: "rgb(95, 245, 31)",
     borderRadius: 5,
   },
   input: {
@@ -63,7 +63,7 @@ export const stylesTol = StyleSheet.create({
     paddingLeft: 20,
   },
   units: {
-    backgroundColor: "silver",
+    backgroundColor: "rgb(245, 241, 241)",
     paddingLeft: 7,
     paddingRight: 8,
     borderRadius: 5,

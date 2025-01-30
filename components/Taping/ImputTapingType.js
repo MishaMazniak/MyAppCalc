@@ -7,7 +7,7 @@ export default function ImputTapingType() {
   const { setContextTaping } = useContext(DataContext);
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
-  const [selectOption, setSelectOption] = useState("Metric(M)");
+  const [selectOption, setSelectOption] = useState("M");
 
   const toggleAccordion = () => {
     setIsAccordionOpen(!isAccordionOpen);
@@ -28,17 +28,9 @@ export default function ImputTapingType() {
         </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
-          style={stylesTol.boxAcordeon}
+          style={styles.boxAcordeon}
         >
-          <Text
-            style={[
-              stylesTol.chooseHoleShaft,
-              styles.typeSelect,
-              stylesTol.text,
-            ]}
-          >
-            {selectOption}
-          </Text>
+          <Text style={[stylesTol.text, styles.test]}>{selectOption}</Text>
           <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
           </Text>
@@ -48,13 +40,13 @@ export default function ImputTapingType() {
         <View style={[stylesTol.dropBox, styles.dropBox]}>
           <TouchableOpacity
             onPress={() => {
-              getInput("Metric(M)");
+              getInput("M");
             }}
           >
             <Text
               style={[
-                stylesTol.textBox,
-                selectOption === "Metric(M)" ? stylesTol.select : NaN,
+                styles.textBox,
+                selectOption === "M" ? stylesTol.select : NaN,
               ]}
             >
               Metric(M)
@@ -62,13 +54,13 @@ export default function ImputTapingType() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              getInput("Pipe (G)");
+              getInput("G");
             }}
           >
             <Text
               style={[
-                stylesTol.textBox,
-                selectOption === "Pipe (G)" ? stylesTol.select : NaN,
+                styles.textBox,
+                selectOption === "G" ? stylesTol.select : NaN,
               ]}
             >
               Pipe (G)
@@ -88,7 +80,16 @@ const styles = StyleSheet.create({
   titleInput: {
     width: 102,
   },
-  typeSelect: {
-    marginLeft: 15,
+  boxAcordeon: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  test: {
+    width: "41%",
+  },
+  textBox: {
+    fontSize: 24,
+    paddingLeft: 5,
   },
 });

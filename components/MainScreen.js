@@ -14,15 +14,8 @@ import { gStyle } from "../styles/styles";
 
 export default function MainScreen({ navigation }) {
   const { setNamePage } = useContext(DataContext);
-  const { setContextTypeProces } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
   const { setContextTypeTools } = useContext(DataContext);
-  const { setContextTypePlate } = useContext(DataContext);
-  const { setContextTypeMaterial } = useContext(DataContext);
-  const { setContextCatalog } = useContext(DataContext);
-  const { setContextCatalogPlate } = useContext(DataContext);
-  const { setContextCatalogBoring } = useContext(DataContext);
-  const { setContextResult } = useContext(DataContext);
 
   const startCalc = (nameOpenedPage) => {
     navigation.navigate(nameOpenedPage);
