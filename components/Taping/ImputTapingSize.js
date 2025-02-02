@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { stylesTol } from "../../styles/styleTolerance";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import { stylesTolTap } from "../../styles/stylesTolTap";
 import { DataContext } from "../../ContextAPI/DataContext";
 
 export default function ImputTapingSize() {
@@ -102,32 +108,32 @@ export default function ImputTapingSize() {
   }, [contextTaping.type]);
   return (
     <>
-      <View style={[stylesTol.wrapInput]}>
-        <Text style={[stylesTol.titleInput, styles.titleInput, stylesTol.text]}>
-          Size:
-        </Text>
+      <View style={[stylesTolTap.wrapInput]}>
+        <Text style={[styles.titleInput, stylesTolTap.text]}>Size:</Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
           style={styles.boxAcordeon}
         >
-          <Text style={[stylesTol.text, styles.test]}>{selectOption}</Text>
-          <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
+          <Text style={stylesTolTap.text}>{selectOption}</Text>
+          <Text style={[stylesTolTap.arrowAcordeon, stylesTolTap.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
           </Text>
         </TouchableOpacity>
       </View>
       {isAccordionOpen && (
-        <View style={[stylesTol.dropBox, styles.dropBox]}>
+        <View style={[stylesTolTap.dropBox, styles.dropBox]}>
           {selectList.map((option, index) => (
             <TouchableOpacity onPress={() => getInput(option)} key={index}>
-              <Text
-                style={[
-                  stylesTol.textBox,
-                  selectOption === option ? stylesTol.select : NaN,
-                ]}
-              >
-                {option}
-              </Text>
+              <ScrollView style={styles.scrollView} nestedScrollEnabled={true}>
+                <Text
+                  style={[
+                    stylesTolTap.textBox,
+                    selectOption === option ? stylesTolTap.select : NaN,
+                  ]}
+                >
+                  {option}
+                </Text>
+              </ScrollView>
             </TouchableOpacity>
           ))}
         </View>
@@ -136,18 +142,21 @@ export default function ImputTapingSize() {
   );
 }
 const styles = StyleSheet.create({
+  scrollView: {
+    maxHeight: 200,
+  },
   dropBox: {
-    top: 65,
+    top: 120,
     zIndex: 10,
-    width: "67%",
+    width: "62%",
   },
   titleInput: {
     width: 102,
   },
   boxAcordeon: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    width: "70%",
+    justifyContent: "space-around",
   },
   test: {
     width: "41%",
@@ -155,5 +164,10 @@ const styles = StyleSheet.create({
   textBox: {
     fontSize: 24,
     paddingLeft: 5,
+  },
+  titleInput: {
+    width: "30%",
+    paddingLeft: 10,
+    backgroundColor: "rgb(245, 241, 241)",
   },
 });

@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 
-export const stylesTol = StyleSheet.create({
+export const stylesTolTap = StyleSheet.create({
   text: {
     fontSize: 26,
   },
   wrapInput: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
     width: "90%",
     marginTop: 20,
     borderWidth: 1,
@@ -15,25 +14,23 @@ export const stylesTol = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "white",
   },
+  titleInput: {
+    width: "46%",
+    paddingLeft: 10,
+    backgroundColor: "rgb(245, 241, 241)",
+  },
   dropBox: {
     position: "absolute",
     backgroundColor: "white",
-    width: "56%",
+    width: "48%",
     right: "5%",
     borderRadius: 5,
     marginTop: 2,
   },
-  wrapDiameter: {
-    justifyContent: "flex-start",
-  },
-  titleInput: {
-    width: 150,
-    paddingLeft: 10,
-    backgroundColor: "rgb(245, 241, 241)",
-  },
   boxAcordeon: {
     flexDirection: "row",
-    alignItems: "center",
+    width: "54%",
+    justifyContent: "space-around",
   },
   chooseOpcion: {
     backgroundColor: "white",
@@ -42,12 +39,11 @@ export const stylesTol = StyleSheet.create({
   chooseHoleShaft: {
     paddingRight: 50,
   },
-  arrowAcordeon: {
-    width: 50,
-    marginLeft: 80,
-    paddingLeft: 12,
-  },
-
+  // arrowAcordeon: {
+  //   width: 50,
+  //   marginLeft: 80,
+  //   paddingLeft: 12,
+  // },
   textBox: {
     fontSize: 24,
     paddingLeft: 32,
@@ -61,11 +57,5 @@ export const stylesTol = StyleSheet.create({
     paddingTop: 0,
     paddingBottom: 0,
     paddingLeft: 20,
-  },
-  units: {
-    backgroundColor: "rgb(245, 241, 241)",
-    paddingLeft: 7,
-    paddingRight: 8,
-    borderRadius: 5,
   },
 });

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
-import { stylesTol } from "../../styles/styleTolerance";
+import { stylesTolTap } from "../../styles/stylesTolTap";
 
 export default function Result() {
   const { contextTolerance } = useContext(DataContext);
@@ -10,20 +10,20 @@ export default function Result() {
     <>
       <View style={styles.resultMain}>
         <View style={styles.flexRow}>
-          <Text style={[stylesTol.text, styles.textForType]}>
+          <Text style={[stylesTolTap.text, styles.textForType]}>
             {contextTolerance.type}
             {contextTolerance.tolerance}
           </Text>
-          <Text style={[stylesTol.text, styles.textForDiameter]}>
+          <Text style={[stylesTolTap.text, styles.textForDiameter]}>
             {contextTolerance.d}
           </Text>
           <View style={styles.flexColumn}>
-            <Text style={stylesTol.text}>
+            <Text style={stylesTolTap.text}>
               {contextToleranceResult.maxVal > 0
                 ? "+" + contextToleranceResult.maxVal
                 : contextToleranceResult.maxVal}
             </Text>
-            <Text style={stylesTol.text}>
+            <Text style={stylesTolTap.text}>
               {contextToleranceResult.minVal > 0
                 ? "+" + contextToleranceResult.minVal
                 : contextToleranceResult.minVal}
@@ -31,7 +31,7 @@ export default function Result() {
           </View>
         </View>
         <View>
-          <Text style={stylesTol.text}>
+          <Text style={stylesTolTap.text}>
             ({contextToleranceResult.minD} - {contextToleranceResult.maxD} mm)
           </Text>
         </View>

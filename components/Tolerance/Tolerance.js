@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Image } from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView, Image } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
 import { gStyle } from "../../styles/styles";
 
@@ -35,14 +35,16 @@ export default function Tolerance() {
   }, [contextTolerance]);
 
   return (
-    <SafeAreaView style={gStyle.main}>
-      <InputForm />
-      <Result />
-      <Image
-        style={styles.imgTable}
-        source={require("../../assets/dopuski-i-posadki5.jpg")}
-      />
-    </SafeAreaView>
+    <ScrollView>
+      <SafeAreaView style={gStyle.main}>
+        <InputForm />
+        <Result />
+        <Image
+          style={styles.imgTable}
+          source={require("../../assets/dopuski-i-posadki5.jpg")}
+        />
+      </SafeAreaView>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({

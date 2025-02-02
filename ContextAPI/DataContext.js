@@ -70,8 +70,9 @@ export const DataProvider = ({ children }) => {
   const [contextTaping, setContextTaping] = useState({
     type: "M",
     size: "1",
-    d: "",
-    thread: "",
+    diameter_hole: "",
+    thread_pitch: "",
+    dataMf: [],
   });
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { stylesTol } from "../../styles/styleTolerance";
+import { stylesTolTap } from "../../styles/stylesTolTap";
 
 export default function ImputHoleShaft({ getDataInput }) {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -16,22 +16,24 @@ export default function ImputHoleShaft({ getDataInput }) {
   };
   return (
     <>
-      <View style={[stylesTol.wrapInput]}>
-        <Text style={[stylesTol.titleInput, stylesTol.text]}>Hole/Shaft:</Text>
+      <View style={[stylesTolTap.wrapInput]}>
+        <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
+          Hole/Shaft:
+        </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
-          style={stylesTol.boxAcordeon}
+          style={stylesTolTap.boxAcordeon}
         >
-          <Text style={[stylesTol.chooseHoleShaft, stylesTol.text]}>
+          <Text style={[stylesTolTap.chooseHoleShaft, stylesTolTap.text]}>
             {selectOption}
           </Text>
-          <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
+          <Text style={[stylesTolTap.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
           </Text>
         </TouchableOpacity>
       </View>
       {isAccordionOpen && (
-        <View style={[stylesTol.dropBox, styles.dropBox]}>
+        <View style={[stylesTolTap.dropBox, styles.dropBox]}>
           <TouchableOpacity
             onPress={() => {
               getInput("holeShaft", "Hole");
@@ -39,8 +41,8 @@ export default function ImputHoleShaft({ getDataInput }) {
           >
             <Text
               style={[
-                stylesTol.textBox,
-                selectOption === "Hole" ? stylesTol.select : NaN,
+                stylesTolTap.textBox,
+                selectOption === "Hole" ? stylesTolTap.select : NaN,
               ]}
             >
               Hole
@@ -53,8 +55,8 @@ export default function ImputHoleShaft({ getDataInput }) {
           >
             <Text
               style={[
-                stylesTol.textBox,
-                selectOption === "Shaft" ? stylesTol.select : NaN,
+                stylesTolTap.textBox,
+                selectOption === "Shaft" ? stylesTolTap.select : NaN,
               ]}
             >
               Shaft

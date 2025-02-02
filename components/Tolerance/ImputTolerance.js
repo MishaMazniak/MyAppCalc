@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
-import { stylesTol } from "../../styles/styleTolerance";
+import { stylesTolTap } from "../../styles/stylesTolTap";
 
 export default function ImputTolerance({ getDataInput }) {
   const { contextTolerance } = useContext(DataContext);
@@ -60,22 +60,24 @@ export default function ImputTolerance({ getDataInput }) {
   }, [contextTolerance.type]);
   return (
     <>
-      <View style={[stylesTol.wrapInput]}>
-        <Text style={[stylesTol.titleInput, stylesTol.text]}>Tolerance:</Text>
+      <View style={[stylesTolTap.wrapInput]}>
+        <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
+          Tolerance:
+        </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
-          style={stylesTol.boxAcordeon}
+          style={stylesTolTap.boxAcordeon}
         >
-          <Text style={[stylesTol.chooseOpcion, stylesTol.text]}>
+          <Text style={[stylesTolTap.chooseOpcion, stylesTolTap.text]}>
             {selectOption}
           </Text>
-          <Text style={[stylesTol.arrowAcordeon, stylesTol.text]}>
+          <Text style={[stylesTolTap.arrowAcordeon, stylesTolTap.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
           </Text>
         </TouchableOpacity>
       </View>
       {isAccordionOpen && (
-        <View style={[stylesTol.dropBox, styles.dropBox]}>
+        <View style={[stylesTolTap.dropBox, styles.dropBox]}>
           {selectList.map((option, index) => (
             <TouchableOpacity
               onPress={() => getInput("tolerance", option)}
@@ -83,8 +85,8 @@ export default function ImputTolerance({ getDataInput }) {
             >
               <Text
                 style={[
-                  stylesTol.textBox,
-                  selectOption === option ? stylesTol.select : NaN,
+                  stylesTolTap.textBox,
+                  selectOption === option ? stylesTolTap.select : NaN,
                 ]}
               >
                 {option}

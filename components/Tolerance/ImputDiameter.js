@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { View, Text, TextInput } from "react-native";
-import { stylesTol } from "../../styles/styleTolerance";
+import { View, Text, TextInput, StyleSheet } from "react-native";
+import { stylesTolTap } from "../../styles/stylesTolTap";
 import { DataContext } from "../../ContextAPI/DataContext";
 
 export default function ImputDiameter({ getDataInput }) {
@@ -55,18 +55,38 @@ export default function ImputDiameter({ getDataInput }) {
   };
   return (
     <>
-      <View style={[stylesTol.wrapInput, stylesTol.wrapDiameter]}>
-        <Text style={[stylesTol.titleInput, stylesTol.text]}>Diameter:</Text>
-        <TextInput
-          style={[stylesTol.input, stylesTol.text]}
-          keyboardType="numeric"
-          onChangeText={(value) =>
-            getDiameter("d", Math.abs(parseFloat(value)))
-          }
-          placeholder={String(contextTolerance.d)}
-        />
-        <Text style={[stylesTol.units, stylesTol.text]}>mm</Text>
+      <View style={[stylesTolTap.wrapInput, lStyle.wrapDiameter]}>
+        <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
+          Diameter:
+        </Text>
+        <View style={lStyle.wrapForData}>
+          <TextInput
+            style={[stylesTolTap.input, stylesTolTap.text]}
+            keyboardType="numeric"
+            onChangeText={(value) =>
+              getDiameter("d", Math.abs(parseFloat(value)))
+            }
+            placeholder={String(contextTolerance.d)}
+          />
+          <Text style={[lStyle.units, stylesTolTap.text]}>mm</Text>
+        </View>
       </View>
     </>
   );
 }
+const lStyle = StyleSheet.create({
+  wrapDiameter: {
+    justifyContent: "flex-start",
+  },
+  wrapForData: {
+    flexDirection: "row",
+    width: "54%",
+    justifyContent: "space-between",
+  },
+  units: {
+    backgroundColor: "rgb(245, 241, 241)",
+    paddingLeft: 7,
+    paddingRight: 8,
+    borderRadius: 5,
+  },
+});
