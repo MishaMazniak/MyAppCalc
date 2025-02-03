@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { DataContext } from "../ContextAPI/DataContext";
 import { useFocusEffect } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 import {
   StyleSheet,
   Text,
@@ -13,6 +15,7 @@ import {
 import { gStyle } from "../styles/styles";
 
 export default function MainScreen({ navigation }) {
+  const { t, i18n } = useTranslation();
   const { setNamePage } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
   const { setContextTypeTools } = useContext(DataContext);
@@ -25,7 +28,7 @@ export default function MainScreen({ navigation }) {
     Linking.openURL("mailto:Mishamaznyak@gmail.com");
   };
   const handleLanguageChange = (lang) => {
-    // setLanguage(lang);
+    i18n.changeLanguage(lang);
   };
   useFocusEffect(
     React.useCallback(() => {
@@ -40,26 +43,26 @@ export default function MainScreen({ navigation }) {
         <View style={lStyles.languageContainer}>
           <Pressable
             style={lStyles.languageButton}
-            onPress={() => handleLanguageChange("Ua")}
+            onPress={() => handleLanguageChange("ua")}
           >
             <Text style={lStyles.languageText}>Ua</Text>
           </Pressable>
           <Pressable
             style={lStyles.languageButton}
-            onPress={() => handleLanguageChange("Pl")}
+            onPress={() => handleLanguageChange("pl")}
           >
             <Text style={lStyles.languageText}>Pl</Text>
           </Pressable>
           <Pressable
             style={lStyles.languageButton}
-            onPress={() => handleLanguageChange("En")}
+            onPress={() => handleLanguageChange("en")}
           >
             <Text style={lStyles.languageText}>En</Text>
           </Pressable>
         </View>
         <View style={lStyles.containerIcon}>
           <View style={lStyles.boxWrap}>
-            <Text style={lStyles.textOverIcon}>Wiercenie</Text>
+            <Text style={lStyles.textOverIcon}>{t("drilling")}</Text>
             <Pressable onPress={() => startCalc("Drilling")}>
               <Image
                 style={lStyles.imgFromTitle}
@@ -68,7 +71,7 @@ export default function MainScreen({ navigation }) {
             </Pressable>
           </View>
           <View style={lStyles.boxWrap}>
-            <Text style={lStyles.textOverIcon}>Frezowanie</Text>
+            <Text style={lStyles.textOverIcon}>{t("milling")}</Text>
             <Pressable onPress={() => startCalc("Milling")}>
               <Image
                 style={lStyles.imgFromTitle}
@@ -77,7 +80,7 @@ export default function MainScreen({ navigation }) {
             </Pressable>
           </View>
           <View style={lStyles.boxWrap}>
-            <Text style={lStyles.textOverIcon}>Wytaczanie</Text>
+            <Text style={lStyles.textOverIcon}>{t("boring")}</Text>
             <Pressable onPress={() => startCalc("Boring")}>
               <Image
                 style={lStyles.imgFromTitle}
@@ -86,7 +89,7 @@ export default function MainScreen({ navigation }) {
             </Pressable>
           </View>
           <View style={lStyles.boxWrap}>
-            <Text style={lStyles.textOverIcon}>Tolerancji</Text>
+            <Text style={lStyles.textOverIcon}>{t("tolerance")}</Text>
             <Pressable onPress={() => startCalc("Tolerance")}>
               <Image
                 style={lStyles.imgFromTitle}
@@ -95,7 +98,9 @@ export default function MainScreen({ navigation }) {
             </Pressable>
           </View>
           <View style={lStyles.boxWrap}>
-            <Text style={lStyles.textOverIcon}>Otwór pod gwint</Text>
+            <Text style={[lStyles.textOverIcon, lStyles.textOverIconShort]}>
+              {t("tapping")}
+            </Text>
             <Pressable onPress={() => startCalc("Taping")}>
               <Image
                 style={lStyles.imgFromTitle}
@@ -135,6 +140,9 @@ const lStyles = StyleSheet.create({
     paddingBottom: 20,
     marginTop: 20,
     textAlign: "center",
+  },
+  textOverIconShort: {
+    maxWidth: 200,
   },
   emailContainer: {
     position: "absolute",

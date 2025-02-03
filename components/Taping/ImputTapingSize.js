@@ -122,9 +122,13 @@ export default function ImputTapingSize() {
       </View>
       {isAccordionOpen && (
         <View style={[stylesTolTap.dropBox, styles.dropBox]}>
-          {selectList.map((option, index) => (
-            <TouchableOpacity onPress={() => getInput(option)} key={index}>
-              <ScrollView style={styles.scrollView} nestedScrollEnabled={true}>
+          <ScrollView
+            style={styles.scrollView}
+            nestedScrollEnabled={true}
+            keyboardShouldPersistTaps="handled"
+          >
+            {selectList.map((option, index) => (
+              <TouchableOpacity onPress={() => getInput(option)} key={index}>
                 <Text
                   style={[
                     stylesTolTap.textBox,
@@ -133,9 +137,9 @@ export default function ImputTapingSize() {
                 >
                   {option}
                 </Text>
-              </ScrollView>
-            </TouchableOpacity>
-          ))}
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
         </View>
       )}
     </>
@@ -143,12 +147,13 @@ export default function ImputTapingSize() {
 }
 const styles = StyleSheet.create({
   scrollView: {
-    maxHeight: 200,
+    maxHeight: 400,
   },
   dropBox: {
     top: 120,
     zIndex: 10,
     width: "62%",
+    maxHeight: "100%",
   },
   titleInput: {
     width: 102,

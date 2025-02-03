@@ -1,0 +1,9 @@
+{
+  "drilling": "Wiercenie",
+  "milling": "Frezowanie",
+  "boring": "Wytaczanie",
+  "tolerance": "Tolerancji",
+  "tapping": "Gwintowanie",
+  "typeTools": "Typ narzędzia",
+  "typeMaterial": "Typ materiału"
+}

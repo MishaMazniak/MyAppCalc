@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function TypeMaterial() {
+  const { t, i18n } = useTranslation();
   const { setContextTypeMaterial } = useContext(DataContext);
 
   const { contextTypeTools } = useContext(DataContext);
@@ -68,7 +71,7 @@ export default function TypeMaterial() {
       >
         <View style={gStyle.row}>
           <View style={gStyle.typeMaterial}>
-            <Text style={gStyle.title}>Type Materiału - </Text>
+            <Text style={gStyle.title}>{t("typeMaterial")} - </Text>
             <Image
               style={lStyle.imgSelektMateial}
               source={imageMap[selectedOption]}

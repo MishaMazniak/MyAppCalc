@@ -2,8 +2,11 @@ import React, { useState, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function TypeTools() {
+  const { t, i18n } = useTranslation();
   const { setContextTypeTools } = useContext(DataContext);
   const { setContextTypePlate } = useContext(DataContext);
   const { contextTypeMaterial } = useContext(DataContext);
@@ -47,7 +50,9 @@ export default function TypeTools() {
         style={gStyle.accordionHeader}
       >
         <View style={gStyle.row}>
-          <Text style={gStyle.title}>Typ narzędzia - {dinoNameTools}</Text>
+          <Text style={gStyle.title}>
+            {t("typeTools")} - {dinoNameTools}
+          </Text>
           {isAccordionOpen ? (
             <Image
               style={gStyle.imgArrowAcordion}

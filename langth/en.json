@@ -1,0 +1,9 @@
+{
+  "drilling": "Drilling",
+  "milling": "Milling",
+  "boring": "Boring",
+  "tolerance": "Tolerance",
+  "tapping": "Tapping",
+  "typeTools": "Type tool",
+  "typeMaterial": "Type material"
+}
