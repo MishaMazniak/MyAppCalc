@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import { stylesTolTap } from "../../styles/stylesTolTap";
 import { DataContext } from "../../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export default function ImputDiameter({ getDataInput }) {
+  const { t, i18n } = useTranslation();
   const { contextTolerance } = useContext(DataContext);
   const getDiameter = (name, diameter) => {
     let diametrForDB;
@@ -57,7 +60,7 @@ export default function ImputDiameter({ getDataInput }) {
     <>
       <View style={[stylesTolTap.wrapInput, lStyle.wrapDiameter]}>
         <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
-          Diameter:
+          {t("diameter")}
         </Text>
         <View style={lStyle.wrapForData}>
           <TextInput

@@ -2,8 +2,11 @@ import React, { useState, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { stylesTolTap } from "../../styles/stylesTolTap";
 import { DataContext } from "../../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export default function ImputTapingType() {
+  const { t, i18n } = useTranslation();
   const { setContextTaping } = useContext(DataContext);
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -14,8 +17,8 @@ export default function ImputTapingType() {
   };
   const getInput = (el) => {
     if (el === "M") {
-      setSelectOption("Metric (M)");
-    } else setSelectOption("Pipe (G)");
+      setSelectOption("Metric(M)");
+    } else setSelectOption("Pipe(G)");
     setIsAccordionOpen(false);
     setContextTaping((prevState) => ({
       ...prevState,
@@ -25,12 +28,16 @@ export default function ImputTapingType() {
   return (
     <>
       <View style={[stylesTolTap.wrapInput]}>
-        <Text style={[styles.titleInput, stylesTolTap.text]}>Type:</Text>
+        <Text style={[styles.titleInput, stylesTolTap.text]}>
+          {t("typeTap")}
+        </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
           style={styles.boxAcordeon}
         >
-          <Text style={[stylesTolTap.text]}>{selectOption}</Text>
+          <Text style={[stylesTolTap.text]}>
+            {selectOption === "Metric(M)" ? t("metric") : t("pipe")}
+          </Text>
           <Text style={[stylesTolTap.arrowAcordeon, stylesTolTap.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
           </Text>
@@ -46,10 +53,10 @@ export default function ImputTapingType() {
             <Text
               style={[
                 styles.textBox,
-                selectOption === "Metric (M)" ? stylesTolTap.select : NaN,
+                selectOption === "Metric(M)" ? stylesTolTap.select : NaN,
               ]}
             >
-              Metric(M)
+              {t("metric")}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -60,10 +67,10 @@ export default function ImputTapingType() {
             <Text
               style={[
                 styles.textBox,
-                selectOption === "Pipe (G)" ? stylesTolTap.select : NaN,
+                selectOption === "Pipe(G)" ? stylesTolTap.select : NaN,
               ]}
             >
-              Pipe (G)
+              {t("pipe")}
             </Text>
           </TouchableOpacity>
         </View>
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
     width: "62%",
   },
   titleInput: {
-    width: "30%",
+    width: "32%",
     paddingLeft: 10,
     backgroundColor: "rgb(245, 241, 241)",
   },

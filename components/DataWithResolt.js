@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function DataWithResolt() {
+  const { t, i18n } = useTranslation();
   const { contextResult } = useContext(DataContext);
   return (
     <View style={gStyle.container}>
-      <Text style={gStyle.title}>Obliczanie według katalogu</Text>
+      <Text style={[gStyle.title, lStyle.text]}>{t("datFromCatalog")}</Text>
       <Text style={gStyle.text}>
         {isNaN(contextResult.Smin)
           ? "S = 0 - 0 ob/min"
@@ -22,4 +25,8 @@ export default function DataWithResolt() {
   );
 }
 
-const lStyle = StyleSheet.create({});
+const lStyle = StyleSheet.create({
+  text: {
+    textAlign: "center",
+  },
+});

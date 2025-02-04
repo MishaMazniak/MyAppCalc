@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { DataContext } from "../../ContextAPI/DataContext";
 import { stylesTolTap } from "../../styles/stylesTolTap";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export default function ImputType({ getDataInput }) {
+  const { t, i18n } = useTranslation();
   const { contextTolerance } = useContext(DataContext);
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -65,7 +68,9 @@ export default function ImputType({ getDataInput }) {
   return (
     <>
       <View style={[stylesTolTap.wrapInput]}>
-        <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>Type:</Text>
+        <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
+          {t("type")}
+        </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
           style={stylesTolTap.boxAcordeon}

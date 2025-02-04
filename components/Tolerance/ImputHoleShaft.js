@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { stylesTolTap } from "../../styles/stylesTolTap";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export default function ImputHoleShaft({ getDataInput }) {
+  const { t, i18n } = useTranslation();
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   const [selectOption, setSelectOption] = useState("Hole");
 
@@ -18,14 +21,14 @@ export default function ImputHoleShaft({ getDataInput }) {
     <>
       <View style={[stylesTolTap.wrapInput]}>
         <Text style={[stylesTolTap.titleInput, stylesTolTap.text]}>
-          Hole/Shaft:
+          {t("holeShaft")}
         </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
           style={stylesTolTap.boxAcordeon}
         >
           <Text style={[stylesTolTap.chooseHoleShaft, stylesTolTap.text]}>
-            {selectOption}
+            {selectOption === "Hole" ? t("hole") : t("shaft")}
           </Text>
           <Text style={[stylesTolTap.text]}>
             {isAccordionOpen ? "\u25B2" : "\u25BC"}
@@ -45,7 +48,7 @@ export default function ImputHoleShaft({ getDataInput }) {
                 selectOption === "Hole" ? stylesTolTap.select : NaN,
               ]}
             >
-              Hole
+              {t("hole")}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -59,7 +62,7 @@ export default function ImputHoleShaft({ getDataInput }) {
                 selectOption === "Shaft" ? stylesTolTap.select : NaN,
               ]}
             >
-              Shaft
+              {t("shaft")}
             </Text>
           </TouchableOpacity>
         </View>

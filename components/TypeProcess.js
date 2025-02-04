@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function TypeProcess() {
+  const { t, i18n } = useTranslation();
   const { setContextTypeProces } = useContext(DataContext);
   const { contextTypeTools } = useContext(DataContext);
 
@@ -37,7 +40,7 @@ export default function TypeProcess() {
             style={gStyle.option}
             onPress={() => handleOptionChange("roughing")}
           >
-            <Text style={gStyle.textWhite}>Zgrubne</Text>
+            <Text style={gStyle.textWhite}>{t("processRoughing")}</Text>
             {renderRadioButton("roughing")}
           </TouchableOpacity>
 
@@ -45,7 +48,7 @@ export default function TypeProcess() {
             style={gStyle.option}
             onPress={() => handleOptionChange("finishing")}
           >
-            <Text style={gStyle.textWhite}>Wykańczające</Text>
+            <Text style={gStyle.textWhite}>{t("processFinishing")}</Text>
             {renderRadioButton("finishing")}
           </TouchableOpacity>
         </View>

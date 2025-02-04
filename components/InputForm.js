@@ -2,12 +2,15 @@ import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 import InputForDrilling from "./InputForDrilling";
 import InputForMilling from "./InputForMilling";
 import InputForBoring from "./InputForBoring";
 
 export default function InputForm() {
+  const { t, i18n } = useTranslation();
   const { namePage } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
   const { contextInput } = useContext(DataContext);
@@ -70,7 +73,7 @@ export default function InputForm() {
             source={require("../assets/warning.png")}
           />
           <Text style={styles.textInfo}>
-            The catalog contains data for {infoAboutCatalog.name} tools d ={" "}
+            {t("catalogContains")} {infoAboutCatalog.name} d ={" "}
             {infoAboutCatalog.value}{" "}
           </Text>
         </View>

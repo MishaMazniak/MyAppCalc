@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 import {
   StyleSheet,
   View,
@@ -10,6 +12,7 @@ import { stylesTolTap } from "../../styles/stylesTolTap";
 import { DataContext } from "../../ContextAPI/DataContext";
 
 export default function ImputTapingSize() {
+  const { t, i18n } = useTranslation();
   const { setContextTaping } = useContext(DataContext);
   const { contextTaping } = useContext(DataContext);
 
@@ -109,7 +112,9 @@ export default function ImputTapingSize() {
   return (
     <>
       <View style={[stylesTolTap.wrapInput]}>
-        <Text style={[styles.titleInput, stylesTolTap.text]}>Size:</Text>
+        <Text style={[styles.titleInput, stylesTolTap.text]}>
+          {t("sizeTap")}
+        </Text>
         <TouchableOpacity
           onPress={() => toggleAccordion()}
           style={styles.boxAcordeon}
@@ -152,11 +157,8 @@ const styles = StyleSheet.create({
   dropBox: {
     top: 120,
     zIndex: 10,
-    width: "62%",
+    width: "60%",
     maxHeight: "100%",
-  },
-  titleInput: {
-    width: 102,
   },
   boxAcordeon: {
     flexDirection: "row",
@@ -171,7 +173,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   titleInput: {
-    width: "30%",
+    width: "34%",
     paddingLeft: 10,
     backgroundColor: "rgb(245, 241, 241)",
   },

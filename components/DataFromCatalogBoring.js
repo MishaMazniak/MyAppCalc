@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import { DataContext } from "../ContextAPI/DataContext";
 import { StyleSheet, View, Text } from "react-native";
 import { gStyle } from "../styles/styles";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function DataFromCatalogBoring() {
+  const { t, i18n } = useTranslation();
   const { contextCatalogBoring } = useContext(DataContext);
   return (
     <View style={gStyle.container}>
-      <Text style={gStyle.title}>Dane katalogowe</Text>
+      <Text style={gStyle.title}>{t("dataCatalog")}</Text>
 
       <Text style={gStyle.text}>
         Vc = {contextCatalogBoring.vc_Min} - {contextCatalogBoring.vc_Max} m/min

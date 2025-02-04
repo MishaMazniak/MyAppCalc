@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { View, Text } from "react-native";
 import { gStyle } from "../styles/styles";
 import { DataContext } from "../ContextAPI/DataContext";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function CalkOwnerParameters() {
+  const { t, i18n } = useTranslation();
   const { namePage } = useContext(DataContext);
   const { contextInput } = useContext(DataContext);
 
@@ -30,7 +33,7 @@ export default function CalkOwnerParameters() {
 
   return (
     <View style={gStyle.container}>
-      <Text style={gStyle.title}>Obliczanie dla twoich Vc i f</Text>
+      <Text style={gStyle.title}>{t("yourParameters")}</Text>
       <Text style={gStyle.text}>S = {resultOwner.s} ob/min</Text>
       <Text style={gStyle.text}>F = {resultOwner.f} mm/min</Text>
     </View>

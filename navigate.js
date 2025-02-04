@@ -1,6 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { useTranslation } from "react-i18next";
+import "./i18n";
 
 import Drilling from "./components/Drilling";
 import Milling from "./components/Milling";
@@ -12,6 +14,7 @@ import Taping from "./components/Taping/Taping";
 const Stack = createStackNavigator();
 
 export default function Navigate() {
+  const { t, i18n } = useTranslation();
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -19,7 +22,7 @@ export default function Navigate() {
           name="MainScreen"
           component={MainScreen}
           options={{
-            title: "Kalkulator CNC",
+            title: t("nameMainPage"),
             headerTitleAlign: "center",
           }}
         />
@@ -27,7 +30,7 @@ export default function Navigate() {
           name="Drilling"
           component={Drilling}
           options={{
-            title: "Drilling",
+            title: t("drilling"),
             headerTitleAlign: "center",
           }}
         />
@@ -35,7 +38,7 @@ export default function Navigate() {
           name="Milling"
           component={Milling}
           options={{
-            title: "Milling",
+            title: t("milling"),
             headerTitleAlign: "center",
           }}
         />
@@ -43,7 +46,7 @@ export default function Navigate() {
           name="Boring"
           component={Boring}
           options={{
-            title: "Boring",
+            title: t("boring"),
             headerTitleAlign: "center",
           }}
         />
@@ -51,7 +54,7 @@ export default function Navigate() {
           name="Tolerance"
           component={Tolerance}
           options={{
-            title: "Tolerance",
+            title: t("tolerance"),
             headerTitleAlign: "center",
           }}
         />
@@ -59,7 +62,7 @@ export default function Navigate() {
           name="Taping"
           component={Taping}
           options={{
-            title: "Taping",
+            title: t("tapping"),
             headerTitleAlign: "center",
           }}
         />
