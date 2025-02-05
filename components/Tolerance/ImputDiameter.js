@@ -71,7 +71,7 @@ export default function ImputDiameter({ getDataInput }) {
             }
             placeholder={String(contextTolerance.d)}
           />
-          <Text style={[lStyle.units, stylesTolTap.text]}>mm</Text>
+          <Text style={[lStyle.units, stylesTolTap.text]}>{t("mm")}</Text>
         </View>
       </View>
     </>

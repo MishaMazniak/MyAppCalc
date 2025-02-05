@@ -13,13 +13,13 @@ export default function DataWithResolt() {
       <Text style={[gStyle.title, lStyle.text]}>{t("datFromCatalog")}</Text>
       <Text style={gStyle.text}>
         {isNaN(contextResult.Smin)
-          ? "S = 0 - 0 ob/min"
-          : `S = ${contextResult.Smin} - ${contextResult.Smax} ob/min`}
+          ? `S = 0 - 0 ${t("obMin")}`
+          : `S = ${contextResult.Smin} - ${contextResult.Smax} ${t("obMin")}`}
       </Text>
       <Text style={gStyle.text}>
         {isNaN(contextResult.Fmin)
-          ? "F = 0 - 0 mm/min"
-          : `F = ${contextResult.Fmin} - ${contextResult.Fmax} mm/min`}
+          ? `F = 0 - 0 ${t("mmMin")}`
+          : `F = ${contextResult.Fmin} - ${contextResult.Fmax} ${t("mmMin")}`}
       </Text>
     </View>
   );

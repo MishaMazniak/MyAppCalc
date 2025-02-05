@@ -45,7 +45,7 @@ export default function Taping() {
 const styles = StyleSheet.create({
   back: {
     height: "100%",
-    paddingBottom: 100,
+    paddingBottom: "50%",
   },
   imgTable: {
     marginTop: 25,

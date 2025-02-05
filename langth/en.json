@@ -23,5 +23,13 @@
   "typeTap": "Type:",
   "sizeTap": "Size:",
   "metric": "Metric(M)",
-  "pipe": "Pipe(G)"
+  "pipe": "Pipe(G)",
+  "mm": "mm",
+  "mMin": "m/min",
+  "mmMin": "mm/min",
+  "mmOb": "mm/rev",
+  "obMin": "rev/min",
+  "mmZ": "mm/z",
+  "pice": "pice",
+  "hardness": "Hardness"
 }

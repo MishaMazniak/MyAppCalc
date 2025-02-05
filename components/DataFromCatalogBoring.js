@@ -13,15 +13,20 @@ export default function DataFromCatalogBoring() {
       <Text style={gStyle.title}>{t("dataCatalog")}</Text>
 
       <Text style={gStyle.text}>
-        Vc = {contextCatalogBoring.vc_Min} - {contextCatalogBoring.vc_Max} m/min
+        Vc = {contextCatalogBoring.vc_Min} - {contextCatalogBoring.vc_Max}{" "}
+        {t("mMin")}
       </Text>
       <Text style={gStyle.text}>
-        fk = {contextCatalogBoring.f_Min} - {contextCatalogBoring.f_Max} mm/ob
+        fk = {contextCatalogBoring.f_Min} - {contextCatalogBoring.f_Max}{" "}
+        {t("mmOb")}
       </Text>
       <Text style={gStyle.text}>
-        ap = {contextCatalogBoring.ap_Min} - {contextCatalogBoring.ap_Max} mm
+        ap = {contextCatalogBoring.ap_Min} - {contextCatalogBoring.ap_Max}{" "}
+        {t("mm")}
       </Text>
-      <Text style={gStyle.text}>R = {contextCatalogBoring.R_plate} mm</Text>
+      <Text style={gStyle.text}>
+        R = {contextCatalogBoring.R_plate} {t("mm")}
+      </Text>
       <View style={gStyle.underLine}></View>
     </View>
   );

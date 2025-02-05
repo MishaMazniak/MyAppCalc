@@ -24,16 +24,19 @@ export default function DataFromCatalogPlate() {
       <Text style={gStyle.title}>{t("dataCatalog")}</Text>
 
       <Text style={gStyle.text}>
-        Vc = {contextCatalogPlate.vc_Min} - {contextCatalogPlate.vc_Max} m/min
+        Vc = {contextCatalogPlate.vc_Min} - {contextCatalogPlate.vc_Max}{" "}
+        {t("mMin")}
       </Text>
       <Text style={gStyle.text}>
-        fz = {contextCatalogPlate.f_Min} - {contextCatalogPlate.f_Max} mm/z
+        fz = {contextCatalogPlate.f_Min} - {contextCatalogPlate.f_Max}{" "}
+        {t("mmZ")}
       </Text>
       <Text style={gStyle.text}>
-        ap = {contextCatalogPlate.ap_Min} - {contextCatalogPlate.ap_Max} mm
+        ap = {contextCatalogPlate.ap_Min} - {contextCatalogPlate.ap_Max}{" "}
+        {t("mm")}
       </Text>
       <Text style={gStyle.text}>
-        Twardość = {contextCatalogPlate.hardness} HB
+        {t("hardness")} = {contextCatalogPlate.hardness} HB
       </Text>
       <TouchableOpacity onPress={handleImagePress}>
         <Image style={lStyle.imgInfo} source={require("../assets/info.png")} />

@@ -23,5 +23,13 @@
   "typeTap": "Typ:",
   "sizeTap": "Wymiar:",
   "metric": "Metryczny(M)",
-  "pipe": "Rurowy(G)"
+  "pipe": "Rurowy(G)",
+  "mm": "mm",
+  "mMin": "m/min",
+  "mmMin": "mm/min",
+  "mmOb": "mm/ob",
+  "obMin": "ob/min",
+  "mmZ": "mm/z",
+  "pice": "szt",
+  "hardness": "Twardość"
 }

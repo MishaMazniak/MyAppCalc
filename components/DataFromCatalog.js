@@ -8,13 +8,19 @@ import "../i18n";
 export default function DataFromCatalog() {
   const { t, i18n } = useTranslation();
   const { contextCatalog } = useContext(DataContext);
+  const { namePage } = useContext(DataContext);
   return (
     <View style={gStyle.container}>
       <Text style={gStyle.title}>{t("dataCatalog")}</Text>
       <Text style={gStyle.text}>
-        Vc = {contextCatalog.Vcmin} - {contextCatalog.Vcmax} m/min
+        Vc = {contextCatalog.Vcmin} - {contextCatalog.Vcmax} {t("mMin")}
       </Text>
-      <Text style={gStyle.text}>f = {contextCatalog.f} mm/z</Text>
+      <Text style={gStyle.text}>
+        f ={" "}
+        {namePage !== "Drilling"
+          ? `${contextCatalog.f} ${t("mmZ")}`
+          : `${contextCatalog.f} ${t("mmOb")}`}
+      </Text>
       <View style={gStyle.underLine}></View>
     </View>
   );

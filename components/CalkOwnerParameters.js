@@ -34,8 +34,12 @@ export default function CalkOwnerParameters() {
   return (
     <View style={gStyle.container}>
       <Text style={gStyle.title}>{t("yourParameters")}</Text>
-      <Text style={gStyle.text}>S = {resultOwner.s} ob/min</Text>
-      <Text style={gStyle.text}>F = {resultOwner.f} mm/min</Text>
+      <Text style={gStyle.text}>
+        S = {resultOwner.s} {t("obMin")}
+      </Text>
+      <Text style={gStyle.text}>
+        F = {resultOwner.f} {t("mmMin")}
+      </Text>
     </View>
   );
 }
