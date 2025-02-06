@@ -19,6 +19,9 @@ export default function MainScreen({ navigation }) {
   const { setNamePage } = useContext(DataContext);
   const { setContextInput } = useContext(DataContext);
   const { setContextTypeTools } = useContext(DataContext);
+  const { setContextTypeMaterial } = useContext(DataContext);
+  const { setContextTypeProces } = useContext(DataContext);
+  const { setContextTypePlate } = useContext(DataContext);
 
   const startCalc = (nameOpenedPage) => {
     navigation.navigate(nameOpenedPage);
@@ -34,6 +37,9 @@ export default function MainScreen({ navigation }) {
     React.useCallback(() => {
       setContextInput({ d: 0, Vc: 0, f: 0, z: 0, ap: 0, ae: 0, D: 0, L: 0 });
       setContextTypeTools("toolhss");
+      setContextTypeMaterial("steel");
+      setContextTypeProces("roughing");
+      setContextTypePlate("tngx");
       return () => {};
     }, [])
   );
