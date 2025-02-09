@@ -11,7 +11,7 @@ export default function ResultTap() {
         <View style={styles.boxData}>
           <Image
             style={styles.imgTable}
-            source={require("../../assets/screw.png")}
+            source={require("../../assets/screwIcon.png")}
           />
           <Text style={[styles.tapText, styles.mainSize]}>
             {contextTaping.type}
