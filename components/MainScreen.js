@@ -115,9 +115,6 @@ export default function MainScreen({ navigation }) {
             </Pressable>
           </View>
         </View>
-        <Pressable onPress={handleEmailPress} style={lStyles.emailContainer}>
-          <Text style={lStyles.emailText}>Mishamaznyak@gmail.com</Text>
-        </Pressable>
       </View>
     </ScrollView>
   );
