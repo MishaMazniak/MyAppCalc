@@ -16,7 +16,7 @@
         "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mishamaz.instead"
+      "package": "com.mishamaz.calccnc"
     },
     "web": {
       "bundler": "metro",
