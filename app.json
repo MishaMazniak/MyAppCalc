@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "instead",
-    "slug": "instead",
+    "name": "CalcCNC",
+    "slug": "my-CalcCNC",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/info.png",
@@ -38,16 +38,17 @@
     "experiments": {
       "typedRoutes": true
     },
-    "extra": {
-      "eas": {
-        "projectId": "6bba9261-d4e8-45ac-b49a-23caed5cfcd6"
-      }
-    },
     "runtimeVersion": {
       "policy": "appVersion"
     },
-    "updates": {
-      "url": "https://u.expo.dev/6bba9261-d4e8-45ac-b49a-23caed5cfcd6"
+    "owner": "mishamaz",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "820737fe-7d67-4ce3-aa7b-d7016638f9e6"
+      }
     }
   }
 }

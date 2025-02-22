@@ -86,7 +86,6 @@ export default function ImputTapingSize() {
     "3_1/4",
     "3_1/2",
     "3_3/4",
-    "4",
   ];
 
   const toggleAccordion = () => {

@@ -18,6 +18,7 @@ export default function ResultTap() {
             {contextTaping.size}x{contextTaping.thread_pitch}
           </Text>
           {contextTaping.dataMf &&
+            contextTaping.type !== "G" &&
             contextTaping.dataMf.map((option, index) => (
               <Text style={styles.textMf} key={index}>
                 {contextTaping.type}
@@ -34,6 +35,7 @@ export default function ResultTap() {
             {contextTaping.diameter_hole} mm
           </Text>
           {contextTaping.dataMf &&
+            contextTaping.type !== "G" &&
             contextTaping.dataMf.map((option, index) => (
               <Text style={styles.textMf} key={index}>
                 {option.diameter_hole} mm

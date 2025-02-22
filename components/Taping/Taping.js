@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
   imgTable: {
     marginTop: 25,
     width: "90%",
-    height: 150,
+    height: 200,
   },
 });
