@@ -2,7 +2,7 @@
   "expo": {
     "name": "CalcCNC",
     "slug": "my-CalcCNC",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/info.png",
     "scheme": "myapp",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mishamaz.calccnc"
+      "package": "com.mishamaz.calccnc",
+      "versionCode": 2
     },
     "web": {
       "bundler": "metro",
